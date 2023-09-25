@@ -1,8 +1,10 @@
 # NoteStudio
 **problema:**
+
 organizzazione appunti scolastici
 
 **target:**
+
 Studenti
 
 ## funzionalità:
