@@ -13,6 +13,6 @@ Studenti
 -pagina di login per il sito con autenticazione utente
 
 ## elementi
--Categoria --> nomeCategria
--Studente --> mail, password, nome, cognome
--nota --> titolo, corpo, nCaratteri, ultimaModifica, CategoriaAppartenente
+- Categoria --> nomeCategria
+- Studente --> mail, password, nome, cognome
+- nota --> titolo, corpo, nCaratteri, ultimaModifica, CategoriaAppartenente
