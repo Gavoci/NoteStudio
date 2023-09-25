@@ -28,6 +28,4 @@ Studenti
 
 ## mockup:
 
-![mockup](https://github.com/Gavoci/NoteStudio/assets/101709194/666bebe4-de8f-484c-8502-894dc506191d)
-
-![login mockup](https://github.com/Gavoci/NoteStudio/assets/101709194/977bfe41-5d8c-4aab-9e6f-d403a356bff8)
+https://www.figma.com/file/TbxLa4QgpMk9C1MbGbAgtz/Notestudio-wileframe?type=design&node-id=1%3A7&mode=design&t=gUs77aq2aHaUR1dT-1
