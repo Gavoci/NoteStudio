@@ -1,5 +1,4 @@
 # NoteStudio
-progetto Gavoci Diego: gestore di note scolastiche
 
 ### problema
 organizzazione appunti scolastici
