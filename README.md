@@ -8,7 +8,6 @@ Studenti
 ## funzionalità:
 
  - possibilità di creare, modificare o eliminare una nota
- - possibilità di creare, modificare o eliminare una nota
  - possibilità di creare, modificare o eliminare una categoria
  - condivisione delle note
  - editor di testo con grandezza caratteri, colore, ecc (usando una libreria .js)
