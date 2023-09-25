@@ -11,7 +11,7 @@ Studenti
  - condivisione delle note
  - editor di testo con grandezza caratteri, colore, ecc (usando una libreria .js)
  - pagina di login per il sito con autenticazione utente
- - 
+ - ricerca nota per nome
 
 ## elementi:
 - *Categoria* --> nomeCategria
