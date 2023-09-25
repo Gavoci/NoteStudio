@@ -1,6 +1,11 @@
 # NoteStudio
 progetto Gavoci Diego: gestore di note scolastiche
 
+### problema
+organizzazione appunti scolastici
+### target
+Studenti
+
 ## funzionalità:
 -possibilità di creare, modificare o eliminare una nota
 -possibilità di creare, modificare o eliminare una categoria
