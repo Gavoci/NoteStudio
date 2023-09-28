@@ -26,6 +26,11 @@ Studenti
 - ogni *studente* ha piu *categorie*
 - ogni *categoria* ha uno *studente*
 
+## ER:
+
+![ER_noteStudio](https://github.com/Gavoci/NoteStudio/assets/101709194/6dec88ab-d921-4eff-a884-523edaf6d748)
+
+
 ## mockup:
 
 https://www.figma.com/file/TbxLa4QgpMk9C1MbGbAgtz/Notestudio-wileframe?type=design&node-id=1%3A7&mode=design&t=gUs77aq2aHaUR1dT-1
