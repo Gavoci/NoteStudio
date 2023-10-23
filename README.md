@@ -27,7 +27,7 @@ Studenti
 ![ER_noteStudio](https://github.com/Gavoci/NoteStudio/assets/101709194/6dec88ab-d921-4eff-a884-523edaf6d748)
 ## SCHEMA RELAZIONALE:
 - studente(<u>ID</u>, mail, password, nome, cognome, n_note, n_categorie)
-- nota(<u>ID</u>, titlo, corpo, n_caratteri, studente_ID, categoria_ID)
+- nota(<u>ID</u>, titolo, corpo, n_caratteri, studente_ID, categoria_ID)
 - categoria(<u>ID</u>, nome, studente_ID)
 
 
