@@ -20,7 +20,7 @@ Studenti
 
 ## relazioni:
 - ogni *studente* ha più *note*
-- ogni *nota* ha più *studenti*
+- ogni *nota* ha uno *studente*
 - ogni *nota* ha una *categoria*
 - ogni *categoria* ha più *note*
 - ogni *studente* ha piu *categorie*
