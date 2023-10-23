@@ -13,10 +13,6 @@ Studenti
  - pagina di login per il sito con autenticazione utente (usand una mail)
  - ricerca nota per nome
 
-## elementi:
-- *Categoria* --> nomeCategria
-- *Studente* --> mail, password, nome, cognome
-- *nota* --> titolo, corpo, nCaratteri, ultimaModifica, CategoriaAppartenente
 
 ## relazioni:
 - ogni *studente* ha più *note*
@@ -29,11 +25,10 @@ Studenti
 ## ER:
 
 ![ER_noteStudio](https://github.com/Gavoci/NoteStudio/assets/101709194/6dec88ab-d921-4eff-a884-523edaf6d748)
-
 ## SCHEMA RELAZIONALE:
 - studente(<u>ID</u>, mail, password, nome, cognome, n_not, n_categorie)
-- nota(ID, titlo, corpo, n_caratteri, studente_ID, categoria_ID)
-- categoria(ID, nome, studente_ID)
+- nota(<u>ID</u>, titlo, corpo, n_caratteri, studente_ID, categoria_ID)
+- categoria(<u>ID</u>, nome, studente_ID)
 
 
 ## mockup:
