@@ -29,6 +29,7 @@ Studenti
 - studente(<u>ID</u>, mail, password, nome, cognome, n_note, n_categorie)
 - nota(<u>ID</u>, titolo, corpo, n_caratteri, studente_ID, categoria_ID)
 - categoria(<u>ID</u>, nome, studente_ID)
+- ha_scritto(data_modifica)
 
 
 ## mockup:
