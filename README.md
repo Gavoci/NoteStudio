@@ -5,6 +5,9 @@ organizzazione appunti scolastici
 **target:**
 Studenti
 
+**librerie utlizzate**
+https://editorjs.io/
+
 ## funzionalità:
  - possibilità di creare, modificare o eliminare una nota
  - possibilità di creare, modificare o eliminare una categoria
