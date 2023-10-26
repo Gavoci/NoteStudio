@@ -5,7 +5,7 @@ organizzazione appunti scolastici
 **target:**
 Studenti
 
-**librerie utlizzate**
+**librerie utlizzate:**
 https://editorjs.io/
 
 ## funzionalità:
