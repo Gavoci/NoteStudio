@@ -39,7 +39,7 @@ https://editorjs.io/
 
 https://www.figma.com/file/TbxLa4QgpMk9C1MbGbAgtz/Notestudio-wileframe?type=design&node-id=1%3A7&mode=design&t=gUs77aq2aHaUR1dT-1
 
-![schermata1](https://github.com/Gavoci/NoteStudio/assets/101709194/1deab01d-8295-49c2-a14e-9f804416d68d)
+![schermata1](https://github.com/Gavoci/NoteStudio/assets/101709194/5d94a826-d637-4037-9441-cb52646ae55f)
 ![schermata2](https://github.com/Gavoci/NoteStudio/assets/101709194/65e21f65-d979-4ff8-ae49-67863fedd6b2)
 ![Senza titolo](https://github.com/Gavoci/NoteStudio/assets/101709194/d3f852ca-a1b4-452f-9c73-0a919fc7b437)
 
