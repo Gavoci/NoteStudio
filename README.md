@@ -9,11 +9,11 @@ Studenti
 https://editorjs.io/
 
 ## funzionalità:
- - possibilità di creare, modificare o eliminare una nota
- - possibilità di creare, modificare o eliminare una categoria
+ - possibilità di creare, modificare o eliminare una nota (due note non possono avere due nomi uguali)
+ - possibilità di creare, modificare o eliminare una categoria (due categorie non possono avere due nomi uguali)
  - condivisione delle note
  - editor di testo con grandezza caratteri, colore, ecc (usando una libreria .js)
- - pagina di login per il sito con autenticazione utente (usand una mail)
+ - pagina di login per il sito con autenticazione utente (usando una mail)
  - ricerca nota per nome
 
 
