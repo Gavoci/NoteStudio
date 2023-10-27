@@ -32,7 +32,6 @@ https://editorjs.io/
 - studente(<ins>ID</ins>, mail, password, nome, cognome, n_note, n_categorie)
 - nota(<ins>ID</ins>, titolo, corpo, n_caratteri, studente_ID, categoria_ID)
 - categoria(<ins>ID</ins>, nome, studente_ID)
-- ha_scritto(data_modifica)
 
 
 ## mockup:
