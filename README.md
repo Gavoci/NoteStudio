@@ -37,8 +37,13 @@ https://editorjs.io/
 
 ## mockup:
 
+inserimento blocco:
 ![schermata1](https://github.com/Gavoci/NoteStudio/assets/101709194/9e439602-f0c8-4f01-87a1-423b1c68970d)
+
+modifica testo:
 ![schermata2](https://github.com/Gavoci/NoteStudio/assets/101709194/1dbe1522-98ba-4c87-8b84-25b577827f8d)
+
+login:
 ![Senza titolo](https://github.com/Gavoci/NoteStudio/assets/101709194/d3f852ca-a1b4-452f-9c73-0a919fc7b437)
 
 
