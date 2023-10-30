@@ -55,3 +55,7 @@ https://editorjs.io/
 ![Senza titolo](https://github.com/Gavoci/NoteStudio/assets/101709194/7e28dd47-d370-45a8-bfc9-a22a7ff2064c)
 
 
+<ins>user page:</ins>
+![Screenshot 2023-10-30 125335](https://github.com/Gavoci/NoteStudio/assets/101709194/08cbd710-8510-4f8c-9856-c561871b07c3)
+
+
