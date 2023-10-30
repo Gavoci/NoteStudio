@@ -46,4 +46,7 @@ https://editorjs.io/
 <ins>sign in:</ins>
 ![Senza titolo](https://github.com/Gavoci/NoteStudio/assets/101709194/d3f852ca-a1b4-452f-9c73-0a919fc7b437)
 
+<ins>login in:</ins>
+![Senza titolo](https://github.com/Gavoci/NoteStudio/assets/101709194/7e28dd47-d370-45a8-bfc9-a22a7ff2064c)
+
 
