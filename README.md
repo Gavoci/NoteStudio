@@ -50,7 +50,7 @@ https://editorjs.io/
 
 
 
-<ins>signin:</ins>
+<ins>sign in:</ins>
 ![registrazione](https://github.com/Gavoci/NoteStudio/assets/101709194/323ee2a5-4133-48c3-9a53-00fb99d4c304)
 
 
