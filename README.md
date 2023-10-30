@@ -56,6 +56,7 @@ https://editorjs.io/
 
 
 <ins>user page:</ins>
-![Screenshot 2023-10-30 125335](https://github.com/Gavoci/NoteStudio/assets/101709194/08cbd710-8510-4f8c-9856-c561871b07c3)
+![Screenshot 2023-10-30 125335](https://github.com/Gavoci/NoteStudio/assets/101709194/6f2acb31-3618-400e-aac3-d34d24661cc6)
+
 
 
