@@ -61,5 +61,5 @@ https://editorjs.io/
 <ins>user page:</ins>
 ![Screenshot 2023-10-30 125335](https://github.com/Gavoci/NoteStudio/assets/101709194/6f2acb31-3618-400e-aac3-d34d24661cc6)
 
-
-
+<ins>schermata con categorie e note create:</ins>
+![schermataConCategorie](https://github.com/Gavoci/NoteStudio/assets/101709194/7e50ea87-5f8f-4736-bea1-1d3680d46f24)
