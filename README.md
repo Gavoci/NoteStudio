@@ -28,9 +28,11 @@ https://editorjs.io/
 
 ## ER:
 
-![ER_noteStudio](https://github.com/Gavoci/NoteStudio/assets/101709194/694c6fde-70ab-4962-a75b-376494c15253)
+![ER_noteStudio](https://github.com/Gavoci/NoteStudio/assets/101709194/bf050b62-7db3-4407-9899-53589562c3ce)
+
+
 ## SCHEMA RELAZIONALE:
-- studente(<ins>ID</ins>, mail, password, nome, cognome, n_note, n_categorie)
+- studente(<ins>ID</ins>, mail, password, nome, cognome)
 - nota(<ins>ID</ins>, titolo, corpo, n_caratteri, studente_ID, categoria_ID)
 - categoria(<ins>ID</ins>, nome, studente_ID)
 
