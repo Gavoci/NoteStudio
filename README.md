@@ -47,10 +47,11 @@ https://editorjs.io/
 ![modifica testo](https://github.com/Gavoci/NoteStudio/assets/101709194/f9cb6048-932b-40e2-b421-db9c536c7b50)
 
 
-<ins>sign in:</ins>
-![Senza titolo](https://github.com/Gavoci/NoteStudio/assets/101709194/d3f852ca-a1b4-452f-9c73-0a919fc7b437)
+<ins>signin:</ins>
+![registrazione](https://github.com/Gavoci/NoteStudio/assets/101709194/323ee2a5-4133-48c3-9a53-00fb99d4c304)
 
-<ins>login in:</ins>
+
+<ins>login:</ins>
 ![Senza titolo](https://github.com/Gavoci/NoteStudio/assets/101709194/7e28dd47-d370-45a8-bfc9-a22a7ff2064c)
 
 
