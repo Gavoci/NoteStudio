@@ -28,7 +28,8 @@ https://editorjs.io/
 
 ## ER:
 
-![ER_noteStudio](https://github.com/Gavoci/NoteStudio/assets/101709194/bf050b62-7db3-4407-9899-53589562c3ce)
+![ER_noteStudio](https://github.com/Gavoci/NoteStudio/assets/101709194/020f4285-d32d-479d-8f72-fccc32253bc4)
+
 
 
 ## SCHEMA RELAZIONALE:
