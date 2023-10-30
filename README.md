@@ -41,11 +41,13 @@ https://editorjs.io/
 ## mockup:
 
 <ins>inserimento blocco:</ins>
-![aggiunta blocco](https://github.com/Gavoci/NoteStudio/assets/101709194/35ca61db-8d24-4bb9-b479-c7d5aafe7dc7)
+![aggiunta blocco](https://github.com/Gavoci/NoteStudio/assets/101709194/59a2a8eb-24d0-4b6b-a943-bc6d89bb0ac3)
+
 
 
 <ins>modifica testo:</ins>
-![modifica testo](https://github.com/Gavoci/NoteStudio/assets/101709194/f9cb6048-932b-40e2-b421-db9c536c7b50)
+![modifica testo](https://github.com/Gavoci/NoteStudio/assets/101709194/010fa7d1-d51c-4be5-ba3b-ea903e81e8ab)
+
 
 
 <ins>signin:</ins>
