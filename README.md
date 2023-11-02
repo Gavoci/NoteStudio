@@ -11,7 +11,6 @@ https://editorjs.io/
 ## funzionalità:
  - possibilità di creare, modificare o eliminare una nota
  - possibilità di creare, modificare o eliminare una categoria (due categorie non possono avere due nomi uguali)
- - editor di testo con grandezza caratteri, colore, ecc (usando una libreria .js)
  - pagina di login per il sito con autenticazione utente (usando una mail)
  - ricerca nota per nome
  - ricerca per categoria
