@@ -96,3 +96,7 @@ CREATE TABLE IF NOT EXISTS categoria (
 
 <ins>schermata con categorie e note create:</ins>
 ![schermataConCategorie](https://github.com/Gavoci/NoteStudio/assets/101709194/7e50ea87-5f8f-4736-bea1-1d3680d46f24)
+
+<ins>back-end:</ins>
+![backend](https://github.com/Gavoci/NoteStudio/assets/101709194/8ad991e6-567f-46a5-96c9-6d09ce606467)
+
