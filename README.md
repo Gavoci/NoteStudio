@@ -37,10 +37,12 @@ https://editorjs.io/
 
 ## MODELLO FISICO:
 [Uploading NoteStudioSQL.sql…](-- Creazione del database
+
 CREATE DATABASE IF NOT EXISTS NoteStudio;
 USE NoteStudio;
 
 -- crea tabella studente
+
 CREATE TABLE IF NOT EXISTS studente (
     ID INT PRIMARY KEY,
     mail VARCHAR(255),
@@ -52,6 +54,7 @@ CREATE TABLE IF NOT EXISTS studente (
 );
 
 -- crea tabella note
+
 CREATE TABLE IF NOT EXISTS nota (
     ID INT PRIMARY KEY,
     titolo VARCHAR(255),
@@ -63,6 +66,7 @@ CREATE TABLE IF NOT EXISTS nota (
 );
 
 -- crea tabella categorie
+
 CREATE TABLE IF NOT EXISTS categoria (
     ID INT PRIMARY KEY,
     nome VARCHAR(255),
