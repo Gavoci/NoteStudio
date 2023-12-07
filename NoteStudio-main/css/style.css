@@ -1,0 +1,43 @@
+html,body {
+    padding: 0;
+    margin: 0;
+    font: 14px 'Open sans', sans-serif;
+    color: #333;
+}
+h1 {
+    margin: 0%;
+    margin-bottom: 20px;
+	font-size: 30px;
+    text-align: center;
+}
+form {
+    padding: 40px;
+    background: #e7f9ef;
+    border: 10px solid #333;
+    width: 360px;
+    margin: 30px auto;
+}
+input {
+	font: 15px 'Open Sans', sans-serif;
+    border: 2px solid #e7f9ef;
+    padding: 6px;
+    display: block;
+	margin-bottom: 10px;
+    width: 96%;
+    font-weight: bolder;
+}
+button {
+    font: 14px 'Open Sans', sans-serif;
+    background-color: #333;
+    color: white;
+    padding: 6px;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+}
+
+.nome-cognome {
+    display: flex;
+    margin: 1px;
+}
+
