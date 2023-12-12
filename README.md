@@ -5,6 +5,9 @@ organizzazione appunti scolastici
 **target:**
 Studenti
 
+**prerequisito:**
+avere XAMP sulla propria macchina, con dentro htdocs la cartella di NoteStudio
+
 **libreria utlizzata:**
 https://editorjs.io/
 
