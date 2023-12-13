@@ -41,6 +41,8 @@ https://editorjs.io/
 ## MODELLO FISICO:
 [Uploading NoteStudioSQL.sql…](-- Creazione del database
 
+
+```sql
 CREATE DATABASE IF NOT EXISTS NoteStudio;
 USE NoteStudio;
 
@@ -77,7 +79,7 @@ CREATE TABLE IF NOT EXISTS categoria (
     FOREIGN KEY (studente_ID) REFERENCES studente(ID)
 );
 )
-
+```
 ## mockup:
 
 <ins>inserimento blocco:</ins>
