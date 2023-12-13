@@ -39,8 +39,6 @@ https://editorjs.io/
 - categoria(<ins>ID</ins>, nome, studente_ID)
 
 ## MODELLO FISICO:
-[Uploading NoteStudioSQL.sql…](-- Creazione del database
-
 
 ```sql
 CREATE DATABASE IF NOT EXISTS NoteStudio;
