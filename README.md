@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS categoria (
     studente_ID INT,
     FOREIGN KEY (studente_ID) REFERENCES studente(ID)
 );
-)
+
 ```
 ## mockup:
 
