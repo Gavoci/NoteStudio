@@ -1,12 +1,17 @@
 # NoteStudio
+
+**prerequisito:**
+avere XAMP sulla propria macchina, con dentro htdocs la cartella di NoteStudio
+```
+http://localhost/notestudiotest/login.php
+```
+
 **problema:**
 organizzazione appunti scolastici
 
 **target:**
 Studenti
 
-<font color="#FF0000">**prerequisito:**</font>
-avere XAMP sulla propria macchina, con dentro htdocs la cartella di NoteStudio
 
 **libreria utlizzata:**
 https://editorjs.io/
