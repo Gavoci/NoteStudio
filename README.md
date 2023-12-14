@@ -5,7 +5,7 @@ organizzazione appunti scolastici
 **target:**
 Studenti
 
-<font color="red">**prerequisito:**</font>
+<font color="#FF0000">**prerequisito:**</font>
 avere XAMP sulla propria macchina, con dentro htdocs la cartella di NoteStudio
 
 **libreria utlizzata:**
