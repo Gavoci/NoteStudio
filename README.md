@@ -5,6 +5,26 @@ avere XAMP sulla propria macchina, con dentro htdocs la cartella di NoteStudio
 ```
 http://localhost/notestudio/login.php
 ```
+**popolare il database con degli utenti:**
+```
+INSERT INTO studente (email, password, name, user_type, `image`, n_note, n_categorie)
+VALUES
+    ('john.doe@example.com', MD5('password1'), 'John Doe', 'user', 'john_doe.jpg', 0, 0),
+    ('jane.smith@example.com', MD5('password2'), 'Jane Smith', 'admin', 'jane_smith.jpg', 0, 0),
+    ('michael.jones@example.com', MD5('password3'), 'Michael Jones', 'user', 'michael_jones.jpg', 0, 0),
+    ('emily.brown@example.com', MD5('password4'), 'Emily Brown', 'user', 'emily_brown.jpg', 0, 0),
+    ('david.white@example.com', MD5('password5'), 'David White', 'admin', 'david_white.jpg', 0, 0),
+    ('susan.miller@example.com', MD5('password6'), 'Susan Miller', 'user', 'susan_miller.jpg', 0, 0),
+    ('brian.adams@example.com', MD5('password7'), 'Brian Adams', 'user', 'brian_adams.jpg', 0, 0),
+    ('olivia.jenkins@example.com', MD5('password8'), 'Olivia Jenkins', 'admin', 'olivia_jenkins.jpg', 0, 0),
+    ('ryan.anderson@example.com', MD5('password9'), 'Ryan Anderson', 'user', 'ryan_anderson.jpg', 0, 0),
+    ('amber.wilson@example.com', MD5('password10'), 'Amber Wilson', 'user', 'amber_wilson.jpg', 0, 0),
+    ('chris.smith@example.com', MD5('password11'), 'Chris Smith', 'admin', 'chris_smith.jpg', 0, 0),
+    ('lisa.baker@example.com', MD5('password12'), 'Lisa Baker', 'user', 'lisa_baker.jpg', 0, 0),
+    ('kevin.jackson@example.com', MD5('password13'), 'Kevin Jackson', 'user', 'kevin_jackson.jpg', 0, 0),
+    ('natalie.martin@example.com', MD5('password14'), 'Natalie Martin', 'admin', 'natalie_martin.jpg', 0, 0),
+    ('daniel.hill@example.com', MD5('password15'), 'Daniel Hill', 'user', 'daniel_hill.jpg', 0, 0);
+```
 
 **problema:**
 organizzazione appunti scolastici
