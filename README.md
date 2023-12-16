@@ -5,6 +5,9 @@ avere XAMP sulla propria macchina, con dentro htdocs la cartella di NoteStudio
 ```
 http://localhost/notestudio/login.php
 ```
+```
+http://localhost/phpmyadmin/
+```
 **popolare il database con degli utenti:**
 ```
 INSERT INTO studente (email, password, name, user_type, `image`, n_note, n_categorie)
