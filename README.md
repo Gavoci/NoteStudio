@@ -3,7 +3,7 @@
 **prerequisito:**
 avere XAMP sulla propria macchina, con dentro htdocs la cartella di NoteStudio
 ```
-http://localhost/notestudio/login.php
+http://localhost/NoteStudio-main/login.php
 ```
 ```
 http://localhost/phpmyadmin/
