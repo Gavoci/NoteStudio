@@ -83,9 +83,13 @@ Studenti
 https://editorjs.io/
 
 ## funzionalità:
+- [x] pagina di register per il sito con autenticazione utente (usando una mail)
+- [x] pagina di login 
+- [x] possibilità fa parte dell'admin di modificare o eliminare un utente
+- [x] ricerca utenti con ajax
+- [x] possibilità di modificare i propri dati da parte dell'utente
 - [ ] possibilità di creare, modificare o eliminare una nota
 - [ ] possibilità di creare, modificare o eliminare una categoria (due categorie non possono avere due nomi uguali)
-- [ ] pagina di login per il sito con autenticazione utente (usando una mail)
 - [ ] ricerca nota per nome
 - [ ] ricerca per categoria
 - [ ] condivisione delle note (facoltativo)
