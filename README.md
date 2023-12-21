@@ -55,21 +55,20 @@ CREATE TABLE IF NOT EXISTS categoria (
 ```
 INSERT INTO studente (email, password, name, user_type, `image`, n_note, n_categorie)
 VALUES
-    ('john.doe@example.com', MD5('password1'), 'John Doe', 'user', 'john_doe.jpg', 0, 0),
-    ('jane.smith@example.com', MD5('password2'), 'Jane Smith', 'admin', 'jane_smith.jpg', 0, 0),
-    ('michael.jones@example.com', MD5('password3'), 'Michael Jones', 'user', 'michael_jones.jpg', 0, 0),
-    ('emily.brown@example.com', MD5('password4'), 'Emily Brown', 'user', 'emily_brown.jpg', 0, 0),
-    ('david.white@example.com', MD5('password5'), 'David White', 'admin', 'david_white.jpg', 0, 0),
-    ('susan.miller@example.com', MD5('password6'), 'Susan Miller', 'user', 'susan_miller.jpg', 0, 0),
-    ('brian.adams@example.com', MD5('password7'), 'Brian Adams', 'user', 'brian_adams.jpg', 0, 0),
-    ('olivia.jenkins@example.com', MD5('password8'), 'Olivia Jenkins', 'admin', 'olivia_jenkins.jpg', 0, 0),
-    ('ryan.anderson@example.com', MD5('password9'), 'Ryan Anderson', 'user', 'ryan_anderson.jpg', 0, 0),
-    ('amber.wilson@example.com', MD5('password10'), 'Amber Wilson', 'user', 'amber_wilson.jpg', 0, 0),
-    ('chris.smith@example.com', MD5('password11'), 'Chris Smith', 'admin', 'chris_smith.jpg', 0, 0),
-    ('lisa.baker@example.com', MD5('password12'), 'Lisa Baker', 'user', 'lisa_baker.jpg', 0, 0),
-    ('kevin.jackson@example.com', MD5('password13'), 'Kevin Jackson', 'user', 'kevin_jackson.jpg', 0, 0),
-    ('natalie.martin@example.com', MD5('password14'), 'Natalie Martin', 'admin', 'natalie_martin.jpg', 0, 0),
-    ('daniel.hill@example.com', MD5('password15'), 'Daniel Hill', 'user', 'daniel_hill.jpg', 0, 0);
+    ('Gavoci.Diego@example.com', MD5('password1'), 'Gavoci', 'user',, 0, 0),
+    ('Masper.Mattia@example.com', MD5('password2'), 'Masper', 'admin',, 0, 0),
+    ('Oberti.Fabio@example.com', MD5('password3'), 'Oberti', 'user',, 0, 0),
+    ('Sonzogni.Gabriele@example.com', MD5('password4'), 'Sonzogni', 'user',, 0, 0),
+    ('Todeschini.Paolo@example.com', MD5('password5'), 'Todeschini', 'admin',, 0, 0),
+    ('Tasca.Lorenzo@example.com', MD5('password6'), 'Tasca', 'user',, 0, 0),
+    ('Bresciani.Nicola@example.com', MD5('password7'), 'Bresciani',, 0, 0),
+    ('Greco.Mattia@example.com', MD5('password8'), 'Greco', 'admin',, 0, 0),
+    ('Volpi.Stefano@example.com', MD5('password9'), 'Volpi', 'user',, 0, 0),
+    ('Labollita.Samuele@example.com', MD5('password10'), 'Labollita', 'user',, 0, 0),
+    ('Bonacina.Giorgio@example.com', MD5('password11'), 'Bonacina', 'admin',, 0, 0),
+    ('Scanzi.Filippo@example.com', MD5('password12'), 'Scanzi', 'user',, 0, 0),
+    ('Arnoldi.Silvia@example.com', MD5('password13'), 'Arnoldi', 'user',, 0, 0),
+    ('Arzuffi.Simone@example.com', MD5('password14'), 'Arzuffi', 'admin',, 0, 0);
 ```
 
 **problema:**
