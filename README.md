@@ -105,7 +105,7 @@ https://editorjs.io/
 
 ## ER:
 
-![ER_noteStudio](https://github.com/Gavoci/NoteStudio/assets/101709194/ce9fc942-df3b-4401-b78e-49fbb9e58b53)
+![er](https://github.com/Gavoci/NoteStudio/assets/101709194/bce5f7bf-4a88-457a-9fa0-9e5fed281aa1)
 
 
 ## SCHEMA RELAZIONALE:
