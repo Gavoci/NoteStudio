@@ -5,6 +5,9 @@ avere XAMP sulla propria macchina, con dentro htdocs la cartella di NoteStudio
 ```
 http://localhost/NoteStudio-main/login.php
 ```
+```
+http://localhost/phpmyadmin/
+```
 ## MODELLO FISICO:
 
 ```sql
@@ -48,9 +51,6 @@ CREATE TABLE IF NOT EXISTS categoria (
 
 ```
 
-```
-http://localhost/phpmyadmin/
-```
 **popolare il database con degli utenti:**
 ```
 INSERT INTO studente (email, password, name, user_type, `image`, n_note, n_categorie)
