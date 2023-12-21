@@ -109,7 +109,7 @@ https://editorjs.io/
 
 
 ## SCHEMA RELAZIONALE:
-- studente(<ins>ID</ins>, mail, password, nome, cognome, n_note, n_categorie)
+- studente(<ins>ID</ins>, mail, password, nome, cognome, user_type, n_note, n_categorie)
 - nota(<ins>ID</ins>, titolo, corpo, n_caratteri, studente_ID, categoria_ID)
 - categoria(<ins>ID</ins>, nome, studente_ID)
 
