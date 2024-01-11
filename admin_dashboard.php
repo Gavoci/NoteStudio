@@ -26,8 +26,8 @@ if(!isset($_SESSION['admin_id'])){
 <div class="sidebar">
    <h1>NoteStudio</h1>
    <a href="index.php">Studenti</a>
-   <a href="">Categorie</a>
-   <a href="">Note</a>
+   <a href="index_categorie.php">Categorie</a>
+   <a href="index_note.php">Note</a>
    <a href="admin_profile_update.php">settings</a>
    <a href="logout.php">logout</a>
 </div>
