@@ -91,7 +91,7 @@ Studenti
 
 
 **libreria utlizzata:**
-[https://editorjs.io/](https://richtexteditor.com/)
+https://richtexteditor.com/
 
 ## funzionalità:
 - [x] pagina di register per il sito con autenticazione utente (usando una mail)
