@@ -1,7 +1,10 @@
 # NoteStudio
 
 **prerequisito:**
-avere XAMP sulla propria macchina, con dentro htdocs la cartella di NoteStudio
+avere XAMP sulla propria macchina, e inserire in htdocs la cartella di NoteStudio
+
+**diventare admin:**
+modificare l'user_role da 0 a 1
 ```
 http://localhost/NoteStudio-main/index.php
 ```
