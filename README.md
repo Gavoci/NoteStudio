@@ -3,7 +3,7 @@
 **prerequisito:**
 avere XAMP sulla propria macchina, con dentro htdocs la cartella di NoteStudio
 ```
-http://localhost/NoteStudio-main/login.php
+http://localhost/NoteStudio-main/index.php
 ```
 ```
 http://localhost/phpmyadmin/
@@ -11,64 +11,76 @@ http://localhost/phpmyadmin/
 ## MODELLO FISICO:
 
 ```sql
-CREATE DATABASE IF NOT EXISTS NoteStudio;
-USE NoteStudio;
-
--- crea tabella studente
-
-CREATE TABLE IF NOT EXISTS studente (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    email VARCHAR(255),
-    password VARCHAR(255),
-    name VARCHAR(255),
-    user_type varchar(20) DEFAULT 'user',
-    `image` varchar(100), 
-    n_note INT DEFAULT 0,
-    n_categorie INT DEFAULT 0
-);
-
--- crea tabella note
-
-CREATE TABLE IF NOT EXISTS nota (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    titolo VARCHAR(255),
-    corpo TEXT,
-    n_caratteri INT DEFAULT 0,
-    studente_ID INT,
-    categoria_ID INT,
-    FOREIGN KEY (studente_ID) REFERENCES studente(ID)
-);
-
--- crea tabella categorie
-
-CREATE TABLE IF NOT EXISTS categoria (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(255),
-    studente_ID INT,
-    FOREIGN KEY (studente_ID) REFERENCES studente(ID)
-);
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
-```
+CREATE TABLE `categories` (
+  `cat_id` int(10) NOT NULL,
+  `cat_name` varchar(255) NOT NULL,
+  `cat_date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-**popolare il database con degli utenti:**
-```
-INSERT INTO studente (email, password, name, user_type, `image`, n_note, n_categorie)
-VALUES
-    ('Gavoci.Diego@example.com', MD5('password1'), 'Gavoci', 'user',, 0, 0),
-    ('Masper.Mattia@example.com', MD5('password2'), 'Masper', 'admin',, 0, 0),
-    ('Oberti.Fabio@example.com', MD5('password3'), 'Oberti', 'user',, 0, 0),
-    ('Sonzogni.Gabriele@example.com', MD5('password4'), 'Sonzogni', 'user',, 0, 0),
-    ('Todeschini.Paolo@example.com', MD5('password5'), 'Todeschini', 'admin',, 0, 0),
-    ('Tasca.Lorenzo@example.com', MD5('password6'), 'Tasca', 'user',, 0, 0),
-    ('Bresciani.Nicola@example.com', MD5('password7'), 'Bresciani',, 0, 0),
-    ('Greco.Mattia@example.com', MD5('password8'), 'Greco', 'admin',, 0, 0),
-    ('Volpi.Stefano@example.com', MD5('password9'), 'Volpi', 'user',, 0, 0),
-    ('Labollita.Samuele@example.com', MD5('password10'), 'Labollita', 'user',, 0, 0),
-    ('Bonacina.Giorgio@example.com', MD5('password11'), 'Bonacina', 'admin',, 0, 0),
-    ('Scanzi.Filippo@example.com', MD5('password12'), 'Scanzi', 'user',, 0, 0),
-    ('Arnoldi.Silvia@example.com', MD5('password13'), 'Arnoldi', 'user',, 0, 0),
-    ('Arzuffi.Simone@example.com', MD5('password14'), 'Arzuffi', 'admin',, 0, 0);
+
+CREATE TABLE `notes` (
+  `note_id` int(10) NOT NULL,
+  `note_user` int(10) NOT NULL,
+  `note_title` varchar(255) NOT NULL,
+  `note_cat` int(10) NOT NULL,
+  `note_tags` varchar(255) NOT NULL,
+  `note_desc` longtext NOT NULL,
+  `note_image` varchar(255) DEFAULT NULL,
+  `note_privacy` int(10) NOT NULL,
+  `notes_status` int(10) NOT NULL,
+  `note_views` int(10) NOT NULL,
+  `note_date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+CREATE TABLE `users` (
+  `user_id` int(10) NOT NULL,
+  `user_role` int(10) NOT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `user_phone` varchar(255) NOT NULL,
+  `user_age` int(10) NOT NULL,
+  `user_gender` varchar(255) NOT NULL,
+  `user_position` varchar(255) NOT NULL,
+  `user_company` varchar(255) NOT NULL,
+  `user_companyStart` varchar(255) NOT NULL,
+  `user_companyEnd` varchar(255) NOT NULL,
+  `user_primary` varchar(255) NOT NULL,
+  `user_secondary` varchar(255) NOT NULL,
+  `user_degreeName` varchar(255) NOT NULL,
+  `user_graduationYear` varchar(255) NOT NULL,
+  `user_location` varchar(255) NOT NULL,
+  `user_bio` text NOT NULL,
+  `user_password` varchar(255) NOT NULL,
+  `user_joined` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`cat_id`),
+  ADD UNIQUE KEY `cat_name` (`cat_name`);
+
+ALTER TABLE `notes`
+  ADD PRIMARY KEY (`note_id`);
+
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `user_email` (`user_email`),
+  ADD UNIQUE KEY `user_phone` (`user_phone`);
+
+ALTER TABLE `categories`
+  MODIFY `cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+ALTER TABLE `notes`
+  MODIFY `note_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+ALTER TABLE `users`
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
 ```
 
 **problema:**
@@ -87,9 +99,9 @@ https://editorjs.io/
 - [x] possibilità fa parte dell'admin di modificare o eliminare un utente
 - [x] ricerca utenti con ajax
 - [x] possibilità di modificare i propri dati da parte dell'utente
-- [ ] possibilità di creare, modificare o eliminare una nota
-- [ ] possibilità di creare, modificare o eliminare una categoria (due categorie non possono avere due nomi uguali)
-- [ ] ricerca nota per nome
+- [X] possibilità di creare, modificare o eliminare una nota
+- [X] possibilità di creare, modificare o eliminare una categoria (due categorie non possono avere due nomi uguali)
+- [X] ricerca nota per nome
 - [ ] ricerca per categoria
 - [ ] condivisione delle note (facoltativo)
 
