@@ -68,12 +68,22 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                                 </div>
 
                                 <div class="col-12">
-                                    <label for="Password">Password</label>
+                                    <label for="password">Password</label>
                                     <div class="input-group">
-
                                         <input type="password" name="password" id="passwordInput" class="form-control">
                                         <button type="button" id="togglePassword" class="btn btn-light border"><i
                                                 class="bi bi-eye"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Add password confirmation field -->
+                                <div class="col-12">
+                                    <label for="confirmPassword">Confirm Password</label>
+                                    <div class="input-group">
+                                        <input type="password" name="confirmPassword" id="confirmPasswordInput"
+                                            class="form-control">
+                                        <button type="button" id="toggleConfirmPassword"
+                                            class="btn btn-light border"><i class="bi bi-eye"></i></button>
                                     </div>
                                 </div>
 
@@ -94,16 +104,26 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const passwordInput = document.getElementById('passwordInput');
+            const confirmPasswordInput = document.getElementById('confirmPasswordInput');
             const togglePassword = document.getElementById('togglePassword');
+            const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
 
             togglePassword.addEventListener('click', function () {
-                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                passwordInput.setAttribute('type', type);
+                togglePasswordVisibility(passwordInput, togglePassword);
+            });
+
+            toggleConfirmPassword.addEventListener('click', function () {
+                togglePasswordVisibility(confirmPasswordInput, toggleConfirmPassword);
+            });
+
+            function togglePasswordVisibility(inputField, toggleButton) {
+                const type = inputField.getAttribute('type') === 'password' ? 'text' : 'password';
+                inputField.setAttribute('type', type);
 
                 // Change the eye icon based on the password visibility
-                togglePassword.innerHTML = type === 'password' ? '<i class="bi bi-eye"></i>' :
+                toggleButton.innerHTML = type === 'password' ? '<i class="bi bi-eye"></i>' :
                     '<i class="bi bi-eye-slash"></i>';
-            });
+            }
         });
     </script>
     <script>
@@ -114,7 +134,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-        </script>
+    </script>
 </body>
 
 </html>
