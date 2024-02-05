@@ -91,15 +91,22 @@ ALTER TABLE `users`
 INSERT INTO `categories` (`cat_name`) VALUES
 ('Categoria 1'),
 ('Categoria 2'),
-('Categoria 3');
+('Categoria 3'),
+('Categoria 4'),
+('Categoria 5'),
+('Categoria 6');
 
 INSERT INTO `users` (`user_role`, `user_name`, `user_email`, `user_phone`, `user_age`, `user_gender`, `user_position`, `user_company`, `user_companyStart`, `user_companyEnd`, `user_primary`, `user_secondary`, `user_degreeName`, `user_graduationYear`, `user_location`, `user_bio`, `user_password`) VALUES
 (1, 'Mario Rossi', 'mario.rossi@example.com', '1234567890', 30, 'Maschio', 'Ingegnere', 'Acme Inc', '2010', '2020', 'Scuola Primaria XYZ', 'Scuola Secondaria ABC', 'Ingegneria', '2008', 'Milano', 'Sono un ingegnere con 10 anni di esperienza.', 'password1'),
-(2, 'Luca Bianchi', 'luca.bianchi@example.com', '0987654321', 35, 'Maschio', 'Architetto', 'Beta Inc', '2005', '2015', 'Scuola Primaria XYZ', 'Scuola Secondaria ABC', 'Architettura', '2003', 'Roma', 'Sono un architetto con 15 anni di esperienza.', 'password2');
+(2, 'Luca Bianchi', 'luca.bianchi@example.com', '0987654321', 35, 'Maschio', 'Architetto', 'Beta Inc', '2005', '2015', 'Scuola Primaria XYZ', 'Scuola Secondaria ABC', 'Architettura', '2003', 'Roma', 'Sono un architetto con 15 anni di esperienza.', 'password2'),
+(3, 'Giulia Verdi', 'giulia.verdi@example.com', '1122334455', 40, 'Femmina', 'Designer', 'Gamma Inc', '2010', '2020', 'Scuola Primaria XYZ', 'Scuola Secondaria ABC', 'Design', '2008', 'Torino', 'Sono un designer con 10 anni di esperienza.', 'password3'),
+(4, 'Francesca Neri', 'francesca.neri@example.com', '5544332211', 45, 'Femmina', 'Programmatore', 'Delta Inc', '2005', '2015', 'Scuola Primaria XYZ', 'Scuola Secondaria ABC', 'Informatica', '2003', 'Napoli', 'Sono un programmatore con 15 anni di esperienza.', 'password4');
 
 INSERT INTO `notes` (`note_user`, `note_title`, `note_cat`, `note_tags`, `note_desc`, `note_privacy`, `notes_status`, `note_views`) VALUES
 (1, 'Nota 1', 1, 'tag1, tag2', 'Questa è la descrizione della nota 1.', 1, 1, 100),
-(2, 'Nota 2', 2, 'tag3, tag4', 'Questa è la descrizione della nota 2.', 1, 1, 200);
+(2, 'Nota 2', 2, 'tag3, tag4', 'Questa è la descrizione della nota 2.', 1, 1, 200),
+(3, 'Nota 3', 3, 'tag5, tag6', 'Questa è la descrizione della nota 3.', 1, 1, 300),
+(4, 'Nota 4', 4, 'tag7, tag8', 'Questa è la descrizione della nota 4.', 1, 1, 400);
 
 ```
 
