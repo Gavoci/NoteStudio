@@ -1,4 +1,4 @@
-<div class="card my-3 rounded-4 border">
+<div class="card my-3">
     <div class="card-body">
         <?php
         $userId = $noteUser;
