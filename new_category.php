@@ -11,7 +11,7 @@
                 <form action="php/new_category.php" class="row g-3" method="post">
                     <div class="col-12">
                         <input type="text" name="categoryName" placeholder="Enter Category Name" id=""
-                            class="form-control text-capitalize">
+                            class="form-control text-capitalize" required>
                     </div>
                     <div class="col-3">
                         <button type="submit" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Add Category</button>
