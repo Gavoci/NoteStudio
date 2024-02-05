@@ -4,7 +4,7 @@ session_start();
 include("../config.php"); // Include your database connection or configuration file
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['categoryName'])) {
+    if (isset($_POST['categoryName']) && !empty(trim($_POST['categoryName']))) {
         $categoryName = $_POST['categoryName'];
         
         // Check if the category name already exists in the database
@@ -27,10 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 $_SESSION['message'] = "Failed to add category!";
                 $_SESSION['type'] = "danger";
-
+                
             }
         }
 
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        exit();
+    } else {
+        $_SESSION['message'] = "Category name cannot be empty!";
+        $_SESSION['type'] = "danger";
         header("Location: " . $_SERVER['HTTP_REFERER']);
         exit();
     }
