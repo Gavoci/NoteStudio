@@ -83,6 +83,23 @@ ALTER TABLE `notes`
 
 ALTER TABLE `users`
   MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+```
+
+## RIEMPIRE IL DATABASE:
+
+```sql
+INSERT INTO `categories` (`cat_name`) VALUES
+('Categoria 1'),
+('Categoria 2'),
+('Categoria 3');
+
+INSERT INTO `users` (`user_role`, `user_name`, `user_email`, `user_phone`, `user_age`, `user_gender`, `user_position`, `user_company`, `user_companyStart`, `user_companyEnd`, `user_primary`, `user_secondary`, `user_degreeName`, `user_graduationYear`, `user_location`, `user_bio`, `user_password`) VALUES
+(1, 'Mario Rossi', 'mario.rossi@example.com', '1234567890', 30, 'Maschio', 'Ingegnere', 'Acme Inc', '2010', '2020', 'Scuola Primaria XYZ', 'Scuola Secondaria ABC', 'Ingegneria', '2008', 'Milano', 'Sono un ingegnere con 10 anni di esperienza.', 'password1'),
+(2, 'Luca Bianchi', 'luca.bianchi@example.com', '0987654321', 35, 'Maschio', 'Architetto', 'Beta Inc', '2005', '2015', 'Scuola Primaria XYZ', 'Scuola Secondaria ABC', 'Architettura', '2003', 'Roma', 'Sono un architetto con 15 anni di esperienza.', 'password2');
+
+INSERT INTO `notes` (`note_user`, `note_title`, `note_cat`, `note_tags`, `note_desc`, `note_privacy`, `notes_status`, `note_views`) VALUES
+(1, 'Nota 1', 1, 'tag1, tag2', 'Questa è la descrizione della nota 1.', 1, 1, 100),
+(2, 'Nota 2', 2, 'tag3, tag4', 'Questa è la descrizione della nota 2.', 1, 1, 200);
 
 ```
 
