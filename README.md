@@ -92,9 +92,7 @@ INSERT INTO `categories` (`cat_name`) VALUES
 ('Categoria 1'),
 ('Categoria 2'),
 ('Categoria 3'),
-('Categoria 4'),
-('Categoria 5'),
-('Categoria 6');
+('Categoria 4');
 
 INSERT INTO `users` (`user_role`, `user_name`, `user_email`, `user_phone`, `user_age`, `user_gender`, `user_position`, `user_company`, `user_companyStart`, `user_companyEnd`, `user_primary`, `user_secondary`, `user_degreeName`, `user_graduationYear`, `user_location`, `user_bio`, `user_password`) VALUES
 (1, 'Mario Rossi', 'mario.rossi@example.com', '1234567890', 30, 'Maschio', 'Ingegnere', 'Acme Inc', '2010', '2020', 'Scuola Primaria XYZ', 'Scuola Secondaria ABC', 'Ingegneria', '2008', 'Milano', 'Sono un ingegnere con 10 anni di esperienza.', 'password1'),
