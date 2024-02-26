@@ -22,6 +22,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $confirmPassword = $_POST['confirmPassword'];
 
+    if ($age < 8) {
+        $_SESSION['type'] = "danger";
+        $_SESSION['message'] = "L'età è troppo bassa!";
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        exit();
+    } elseif ($age > 120) {
+        $_SESSION['type'] = "danger";
+        $_SESSION['message'] = "L'età non è un numero reale!";
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        exit();
+    }
+
     if (isAlreadyRegistered($conn, $email, $phone)) {
         $_SESSION['type'] = "danger";
         $_SESSION['message'] = "Email or phone number already registered!";
