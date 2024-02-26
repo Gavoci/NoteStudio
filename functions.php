@@ -154,7 +154,7 @@ function getUserData($userId)
     global $conn; // Assuming $conn is your database connection
 
     // Prepare SQL statement to fetch user data by user ID
-    $sql = "SELECT user_name, user_age, user_gender, user_position, user_company, user_companyStart, user_companyEnd, user_primary, user_secondary, user_degreeName, user_graduationYear, user_location, user_bio, user_joined FROM users WHERE user_id = ?";
+    $sql = "SELECT user_name, user_age, user_gender, user_joined FROM users WHERE user_id = ?";
 
     // Prepare and bind parameters
     $stmt = $conn->prepare($sql);
@@ -162,7 +162,7 @@ function getUserData($userId)
     $stmt->execute();
     
     // Bind the result to variables
-    $stmt->bind_result($name, $age, $gender, $position, $company, $companyStart, $companyEnd, $primarySchool, $secondarySchool, $degreeName, $graduationYear, $location, $bio, $date);
+    $stmt->bind_result($name, $age, $gender, $date);
 
     // Fetch the result
     $stmt->fetch();
@@ -172,16 +172,6 @@ function getUserData($userId)
         'name' => $name,
         'age' => $age,
         'gender' => $gender,
-        'position' => $position,
-        'company' => $company,
-        'companyStart' => $companyStart,
-        'companyEnd' => $companyEnd,
-        'primarySchool' => $primarySchool,
-        'secondarySchool' => $secondarySchool,
-        'degreeName' => $degreeName,
-        'graduationYear' => $graduationYear,
-        'location' => $location,
-        'bio' => $bio,
         'joined' => $date
     ];
 }
