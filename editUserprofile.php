@@ -43,71 +43,7 @@ include 'partials/navbar.php'; ?>
                                     Other</option>
                             </select>
                         </div>
-                        <h6 class="fw-bold mt-4 mb-2">Employment Details</h6>
-                        <div class="col-md-6">
-                            <label for="position">Position</label>
-                            <input type="text" name="position" class="form-control" id=""
-                                value="<?php echo $userData['position']; ?>">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="position">Company/Organization</label>
-                            <input type="text" name="company" class="form-control" id=""
-                                value="<?php echo $userData['company']; ?>">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="startYear">Start Year</label>
-                            <select name="startYear" class="form-control" id="startYear">
-                                <option value="" selected hidden>Choose...</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="endYear">End Year</label>
-                            <select name="endYear" class="form-control" id="endYear">
-                                <option value="" selected hidden>Choose...</option>
-                            </select>
-                            <div class="form-check form-switch mt-2">
-                                <input class="form-check-input" type="checkbox" name="currentlyWorking" role="switch"
-                                    id="flexSwitchCheckDefault" <?php echo $userData['companyEnd']; ?>>
-                                <label class="form-check-label" for="flexSwitchCheckDefault">Currently working
-                                    here.</label>
-                            </div>
-                        </div>
-                        <h6 class="fw-bold mt-4 mb-0">Add education credential</h6>
-
-                        <div class="col-md-6">
-                            <label for="primary">Primary School</label>
-                            <input type="text" name="primarySchool" class="form-control" id=""
-                                value="<?php echo $userData['primarySchool']; ?>">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="secondary">Secondary School</label>
-                            <input type="text" name="secondarySchool" class="form-control" id=""
-                                value="<?php echo $userData['secondarySchool']; ?>">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="Degree Type">Degree (Optional)</label>
-                            <input type="text" name="degree" class="form-control" id=""
-                                value="<?php echo $userData['degreeName']; ?>">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="graduationYear">Graduation Year</label>
-                            <select name="graduationYear" class="form-control" id="graduationYear">
-                                <option value="" selected hidden>Choose...</option>
-                            </select>
-                        </div>
-
-                        <h6 class="fw-bold mt-4 mb-2">Add current living Location credentials</h6>
-                        <div class="col-md-12">
-                            <label for="location">Location</label>
-                            <input type="text" name="location" class="form-control" id=""
-                                value="<?php echo $userData['location']; ?>">
-                        </div>
-                        <h6 class="fw-bold mt-4 mb-2">Add about yourself </h6>
-                        <div class="col-md-12">
-                            <label for="location">Bio</label>
-                            <textarea name="bioDetails" class="form-control" id="" cols="30" rows="5"
-                                placeholder="Start writing here.."><?php echo $userData['bio']; ?></textarea>
-                        </div>
+                       
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary">Update Profile</button>
                         </div>
