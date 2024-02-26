@@ -20,22 +20,10 @@ if (isset($_SESSION['user_id'])) {
         $name = $_POST['name'];
         $age = $_POST['age'];
         $gender = $_POST['gender'];
-        $position = $_POST['position'];
-        $company = $_POST['company'];
-        $startYear = $_POST['startYear'];
-        $endYear = isset($_POST['currentlyWorking']) ? 'checked' : $_POST['endYear'];
-        $primarySchool = $_POST['primarySchool'];
-        $secondarySchool = $_POST['secondarySchool'];
-        $degree = $_POST['degree'];
-        $graduationYear = $_POST['graduationYear'];
-        $location = $_POST['location'];
-        $bio = $_POST['bioDetails'];
 
         // Prepare and execute the update query
         $sql = "UPDATE users SET 
-                user_name = ?, user_age = ?, user_gender = ?, user_position = ?, user_company = ?, 
-                user_companyStart = ?, user_companyEnd = ?, user_primary = ?, user_secondary = ?, 
-                user_degreeName = ?, user_graduationYear = ?, user_location = ?, user_bio = ?
+                user_name = ?, user_age = ?, user_gender = ?;
                 WHERE user_id = ?";
 
         $stmt = $conn->prepare($sql);
@@ -44,17 +32,6 @@ if (isset($_SESSION['user_id'])) {
             $name,
             $age,
             $gender,
-            $position,
-            $company,
-            $startYear,
-            $endYear,
-            $primarySchool,
-            $secondarySchool,
-            $degree,
-            $graduationYear,
-            $location,
-            $bio,
-            $userId
         );
 
         // Execute the update query
