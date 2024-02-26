@@ -13,13 +13,38 @@ function isAlreadyRegistered($conn, $email, $phone)
     return $count > 0 ? true : false;
 }
 
+function isValidPassword($password)
+{
+    if (strlen($password) < 8) {
+        return false;
+    }
+
+    if (!preg_match('/[A-Z]/', $password)) {
+        return false;
+    }
+
+    if (!preg_match('/[a-z]/', $password)) {
+        return false;
+    }
+
+    if (!preg_match('/[0-9]/', $password)) {
+        return false;
+    }
+
+    if (!preg_match('/[\W]/', $password)) {
+        return false;
+    }
+
+    return true;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $phone = filter_var($_POST['phone'], FILTER_SANITIZE_NUMBER_INT);
     $age = filter_var($_POST['age'], FILTER_SANITIZE_NUMBER_INT);
     $gender = filter_var($_POST['gender'], FILTER_SANITIZE_STRING);
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
 
     if ($age < 8) {
@@ -33,6 +58,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: " . $_SERVER['HTTP_REFERER']);
         exit();
     }
+
+    if (!isValidPassword($password)) {
+        $_SESSION['type'] = "danger";
+        $_SESSION['message'] = "La password deve avere almeno un carattere speciale, deve essere lunga almeno 8 caratteri, e deve contenere almeno un numero, almeno una lettera, e almeno una lettera maiuscola!";
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        exit();
+    }
+
+    $password = password_hash($password, PASSWORD_DEFAULT);
 
     if (isAlreadyRegistered($conn, $email, $phone)) {
         $_SESSION['type'] = "danger";
