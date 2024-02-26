@@ -33,16 +33,6 @@ CREATE TABLE `users` (
   `user_phone` varchar(255) NOT NULL,
   `user_age` int(10) NOT NULL,
   `user_gender` varchar(255) NOT NULL,
-  `user_position` varchar(255) NOT NULL,
-  `user_company` varchar(255) NOT NULL,
-  `user_companyStart` varchar(255) NOT NULL,
-  `user_companyEnd` varchar(255) NOT NULL,
-  `user_primary` varchar(255) NOT NULL,
-  `user_secondary` varchar(255) NOT NULL,
-  `user_degreeName` varchar(255) NOT NULL,
-  `user_graduationYear` varchar(255) NOT NULL,
-  `user_location` varchar(255) NOT NULL,
-  `user_bio` text NOT NULL,
   `user_password` varchar(255) NOT NULL,
   `user_joined` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
