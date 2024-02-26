@@ -40,8 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             }
 
-            $sql = "INSERT INTO users (user_name, user_email, user_phone, user_age, user_gender, user_password)
-                    VALUES ('$name', '$email', '$phone', '$age', '$gender', '$password')";
+            $sql = "INSERT INTO users (user_name, user_email, user_phone, user_age, user_gender, user_password, user_role)
+        VALUES ('$name', '$email', '$phone', '$age', '$gender', '$password', 0)";
 
             $stmt = $conn->prepare($sql);
             $stmt->execute();
