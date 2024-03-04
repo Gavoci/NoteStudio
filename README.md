@@ -135,9 +135,9 @@ https://richtexteditor.com/
 
 
 ## SCHEMA RELAZIONALE:
-- studente(<ins>ID</ins>, mail, password, nome, cognome, user_type, n_note, n_categorie)
-- nota(<ins>ID</ins>, titolo, corpo, n_caratteri, studente_ID, categoria_ID)
-- categoria(<ins>ID</ins>, nome, studente_ID)
+- users(<ins>user_id</ins>, user_role, user_name, user_email, user_phone, user_age, user_gender, user_password, user_joined)
+- notes(<ins>note_id</ins>, note_user, note_title, note_desc, note_views, note_cat)
+- categories(<ins>cat_id</ins>, cat_name)
 
 
 ## mockup:
