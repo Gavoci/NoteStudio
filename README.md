@@ -85,10 +85,10 @@ INSERT INTO `categories` (`cat_name`) VALUES
 ('Categoria 4');
 
 INSERT INTO `users` (`user_role`, `user_name`, `user_email`, `user_phone`, `user_age`, `user_gender`, `user_password`) VALUES
-(1, 'Mario Rossi', 'mario.rossi@example.com', '1234567890', 30, 'Maschio', 'password1'),
-(2, 'Luca Bianchi', 'luca.bianchi@example.com', '0987654321', 35, 'Maschio', 'password2'),
-(3, 'Giulia Verdi', 'giulia.verdi@example.com', '1122334455', 40, 'Femmina', 'password3'),
-(4, 'Francesca Neri', 'francesca.neri@example.com', '5544332211', 45, 'Femmina', 'password4');
+(1, 'Masper', 'masper.mattia@gmail.com', '1234567890', 18, 'Maschio', 'password1'),
+(2, 'Sonzogni', 'sonzogni.gabriele@gmail.com', '0987654321', 18, 'Maschio', 'password2'),
+(3, 'Marcella', 'ferrari.marcella@gmail.com', '1122334455', 18, 'Femmina', 'password3'),
+(4, 'Gavoci', 'gavoci.diego@example.com', '5544332211', 18, 'Maschio', 'password4');
 
 INSERT INTO `notes` (`note_user`, `note_title`, `note_cat`, `note_tags`, `note_desc`, `note_privacy`, `notes_status`, `note_views`) VALUES
 (1, 'Nota 1', 1, 'tag1, tag2', 'Questa è la descrizione della nota 1.', 1, 1, 100),
