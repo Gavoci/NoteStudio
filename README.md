@@ -131,7 +131,7 @@ https://richtexteditor.com/
 
 ## ER:
 
-![er](https://github.com/Gavoci/NoteStudio/assets/101709194/bce5f7bf-4a88-457a-9fa0-9e5fed281aa1)
+![er](https://github.com/Gavoci/NoteStudio/assets/101709194/1b48d465-233c-49ce-a9cc-1ef57ae923e7)
 
 
 ## SCHEMA RELAZIONALE:
