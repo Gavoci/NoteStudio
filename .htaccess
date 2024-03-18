@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /NoteStudio-main/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^api/([^/]+)/?$ api.php?table=$1 [QSA,L]
+RewriteRule ^api/([^/]+)/([^/]+)/?$ api.php?table=$1&id=$2 [QSA,L]
