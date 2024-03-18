@@ -44,6 +44,17 @@
                                 <li><a class="dropdown-item" href="admin_users_list.php">user list</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                API's
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="http://localhost/NoteStudio-main/api/notes">api notes</a></li>
+                                <li><a class="dropdown-item" href="http://localhost/NoteStudio-main/api/categories">api categories</a></li>
+                                <li><a class="dropdown-item" href="http://localhost/NoteStudio-main/api/users">api users</a></li>
+                            </ul>
+                        </li>
                         <?php
                     }
                     ?>
