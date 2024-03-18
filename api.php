@@ -5,12 +5,12 @@ $username = "root";
 $password = "";
 $dbname = "NoteStudio";
 
+header("Content-Type: application/json");
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
 
 function getTableData($table) {
     global $conn;
@@ -30,8 +30,10 @@ $table = $_GET['table'];
 
 if ($table == 'categories' || $table == 'notes' || $table == 'users') {
     $responseData = getTableData($table);
-    // Pretty print JSON
-    echo json_encode($responseData, JSON_PRETTY_PRINT);
+    $output = array();
+    $output['table'] = $table;
+    $output['data'] = $responseData;
+    echo json_encode($output, JSON_PRETTY_PRINT);
 } else {
     echo json_encode(array('error' => 'Invalid table name'));
 }
