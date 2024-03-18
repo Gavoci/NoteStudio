@@ -30,7 +30,8 @@ $table = $_GET['table'];
 
 if ($table == 'categories' || $table == 'notes' || $table == 'users') {
     $responseData = getTableData($table);
-    echo json_encode($responseData);
+    // Pretty print JSON
+    echo json_encode($responseData, JSON_PRETTY_PRINT);
 } else {
     echo json_encode(array('error' => 'Invalid table name'));
 }
