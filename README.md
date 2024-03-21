@@ -1,7 +1,3 @@
-> titolo
-> ciao
-
-
 # NoteStudio
 
 **prerequisito:**
