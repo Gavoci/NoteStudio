@@ -135,7 +135,7 @@ https://richtexteditor.com/
 
 ![er](https://github.com/Gavoci/NoteStudio/assets/101709194/1b48d465-233c-49ce-a9cc-1ef57ae923e7)
 
-*single-tenant:*
+**single-tenant:**
 - users(<ins>user_id</ins>, user_role, user_name, user_email, user_phone, user_age, user_gender, user_password, user_joined)
 - notes(<ins>note_id</ins>, note_user, note_title, note_desc, note_views, note_cat)
 - categories(<ins>cat_id</ins>, cat_name)
@@ -143,7 +143,7 @@ https://richtexteditor.com/
 
 ![er-multy-tenant](https://github.com/Gavoci/NoteStudio/assets/101709194/32f74ed6-cb1c-4f9b-979f-97c4699651e8)
 
-*multi-tenant:*
+**multi-tenant:**
 - users(user_id, tenant_id, user_role, user_name, user_email, user_phone, user_age, user_gender, user_password, user_joined)
 - notes(note_id, tenant_id, note_user, note_title, note_desc, note_views, note_cat)
 - categories(cat_id, tenant_id, cat_name)
