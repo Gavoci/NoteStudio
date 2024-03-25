@@ -22,9 +22,9 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 CREATE TABLE `tenants` (
-  `tenant_id` int(10) NOT NULL AUTO_INCREMENT,
+  `tenant_code` int(10) NOT NULL,
   `tenant_name` varchar(255) NOT NULL,
-  PRIMARY KEY (`tenant_id`)
+  PRIMARY KEY (`tenant_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `categories` (
