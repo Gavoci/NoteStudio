@@ -31,10 +31,10 @@ CREATE TABLE `categories` (
   `cat_id` int(10) NOT NULL AUTO_INCREMENT,
   `cat_name` varchar(255) NOT NULL,
   `cat_date` datetime NOT NULL DEFAULT current_timestamp(),
-  `tenant_id` int(10) NOT NULL,
+  `tenant_code` int(10) NOT NULL,
   PRIMARY KEY (`cat_id`),
   UNIQUE KEY `cat_name` (`cat_name`),
-  FOREIGN KEY (`tenant_id`) REFERENCES `tenants`(`tenant_id`)
+  FOREIGN KEY (`tenant_code`) REFERENCES `tenants`(`tenant_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `notes` (
@@ -49,11 +49,11 @@ CREATE TABLE `notes` (
   `notes_status` int(10) NOT NULL,
   `note_views` int(10) NOT NULL,
   `note_date` datetime NOT NULL DEFAULT current_timestamp(),
-  `tenant_id` int(10) NOT NULL,
+  `tenant_code` int(10) NOT NULL,
   PRIMARY KEY (`note_id`),
   FOREIGN KEY (`note_user`) REFERENCES `users`(`user_id`),
   FOREIGN KEY (`note_cat`) REFERENCES `categories`(`cat_id`),
-  FOREIGN KEY (`tenant_id`) REFERENCES `tenants`(`tenant_id`)
+  FOREIGN KEY (`tenant_code`) REFERENCES `tenants`(`tenant_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `users` (
@@ -66,11 +66,11 @@ CREATE TABLE `users` (
   `user_gender` varchar(255) NOT NULL,
   `user_password` varchar(255) NOT NULL,
   `user_joined` datetime NOT NULL DEFAULT current_timestamp(),
-  `tenant_id` int(10) NOT NULL,
+  `tenant_code` int(10) NOT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_email` (`user_email`),
   UNIQUE KEY `user_phone` (`user_phone`),
-  FOREIGN KEY (`tenant_id`) REFERENCES `tenants`(`tenant_id`)
+  FOREIGN KEY (`tenant_code`) REFERENCES `tenants`(`tenant_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 ALTER TABLE `categories`
