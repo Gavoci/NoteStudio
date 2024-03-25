@@ -27,6 +27,23 @@ CREATE TABLE `tenants` (
   PRIMARY KEY (`tenant_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+CREATE TABLE `users` (
+  `user_id` int(10) NOT NULL AUTO_INCREMENT,
+  `user_role` int(10) NOT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `user_phone` varchar(255) NOT NULL,
+  `user_age` int(10) NOT NULL,
+  `user_gender` varchar(255) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
+  `user_joined` datetime NOT NULL DEFAULT current_timestamp(),
+  `tenant_code` varchar(5) NOT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `user_email` (`user_email`),
+  UNIQUE KEY `user_phone` (`user_phone`),
+  FOREIGN KEY (`tenant_code`) REFERENCES `tenants`(`tenant_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 CREATE TABLE `categories` (
   `cat_id` int(10) NOT NULL AUTO_INCREMENT,
   `cat_name` varchar(255) NOT NULL,
@@ -53,23 +70,6 @@ CREATE TABLE `notes` (
   PRIMARY KEY (`note_id`),
   FOREIGN KEY (`note_user`) REFERENCES `users`(`user_id`),
   FOREIGN KEY (`note_cat`) REFERENCES `categories`(`cat_id`),
-  FOREIGN KEY (`tenant_code`) REFERENCES `tenants`(`tenant_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-CREATE TABLE `users` (
-  `user_id` int(10) NOT NULL AUTO_INCREMENT,
-  `user_role` int(10) NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_email` varchar(255) NOT NULL,
-  `user_phone` varchar(255) NOT NULL,
-  `user_age` int(10) NOT NULL,
-  `user_gender` varchar(255) NOT NULL,
-  `user_password` varchar(255) NOT NULL,
-  `user_joined` datetime NOT NULL DEFAULT current_timestamp(),
-  `tenant_code` varchar(5) NOT NULL,
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `user_email` (`user_email`),
-  UNIQUE KEY `user_phone` (`user_phone`),
   FOREIGN KEY (`tenant_code`) REFERENCES `tenants`(`tenant_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
