@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include("../config.php");
 
 function isAlreadyRegistered($conn, $email, $phone)
@@ -46,22 +45,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gender = filter_var($_POST['gender'], FILTER_SANITIZE_STRING);
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
+    $tenant_code = filter_var($_POST['tenant_code'], FILTER_SANITIZE_STRING);
 
     if ($age < 8) {
         $_SESSION['type'] = "danger";
-        $_SESSION['message'] = "L'età è troppo bassa!";
+        $_SESSION['message'] = "Age is too low!";
         header("Location: " . $_SERVER['HTTP_REFERER']);
         exit();
     } elseif ($age > 120) {
         $_SESSION['type'] = "danger";
-        $_SESSION['message'] = "L'età non è un numero reale!";
+        $_SESSION['message'] = "Age is not a real number!";
         header("Location: " . $_SERVER['HTTP_REFERER']);
         exit();
     }
 
     if (!isValidPassword($password)) {
         $_SESSION['type'] = "danger";
-        $_SESSION['message'] = "La password deve avere almeno un carattere speciale, deve essere lunga almeno 8 caratteri, e deve contenere almeno un numero, almeno una lettera, e almeno una lettera maiuscola!";
+        $_SESSION['message'] = "Password must contain at least one special character, be at least 8 characters long, and contain at least one number, one letter, and one uppercase letter!";
         header("Location: " . $_SERVER['HTTP_REFERER']);
         exit();
     }
@@ -75,10 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         if (strlen($phone) === 10 && is_numeric($phone)) {
-            // Hash the confirmation password
             $hashedConfirmPassword = password_hash($confirmPassword, PASSWORD_DEFAULT);
 
-            // Compare hashed passwords
             if (!password_verify($confirmPassword, $hashedConfirmPassword)) {
                 $_SESSION['type'] = "danger";
                 $_SESSION['message'] = "Passwords do not match!";
@@ -86,8 +84,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             }
 
-            $sql = "INSERT INTO users (user_name, user_email, user_phone, user_age, user_gender, user_password, user_role)
-        VALUES ('$name', '$email', '$phone', '$age', '$gender', '$password', 0)";
+            $sql = "INSERT INTO users (user_name, user_email, user_phone, user_age, user_gender, user_password, user_role, tenant_code)
+                    VALUES ('$name', '$email', '$phone', '$age', '$gender', '$password', 0, '$tenant_code')";
 
             $stmt = $conn->prepare($sql);
             $stmt->execute();
