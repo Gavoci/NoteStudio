@@ -3,7 +3,7 @@
 **prerequisito:**
 avere XAMP sulla propria macchina, e inserire in htdocs la cartella di NoteStudio o aprire code space e incollare il comando e poi aprendo www
 
-**comando**
+**comando:**
 ```
 docker run --name myXampp -p 41061:22 -p 41062:80 -d -v /workspaces/NoteStudio:/www tomsik68/xampp:8
 ```
