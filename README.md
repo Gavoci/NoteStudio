@@ -92,7 +92,6 @@ COMMIT;
 -- Inserimento del tenant
 INSERT INTO tenants (tenant_code, tenant_name) VALUES ('TNT01', 'tenant1');
 
-
 -- Recupero dell'ID dell'utente appena inserito
 SET @user_id = LAST_INSERT_ID();
 
@@ -102,6 +101,7 @@ INSERT INTO categories (cat_name, tenant_code) VALUES ('Category 2', 'TNT01');
 INSERT INTO categories (cat_name, tenant_code) VALUES ('Category 3', 'TNT01');
 INSERT INTO categories (cat_name, tenant_code) VALUES ('Category 4', 'TNT01');
 INSERT INTO categories (cat_name, tenant_code) VALUES ('Category 5', 'TNT01');
+
 
 ```
 
