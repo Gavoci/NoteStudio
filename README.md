@@ -52,6 +52,7 @@ CREATE TABLE `categories` (
   `cat_id` int(10) NOT NULL AUTO_INCREMENT,
   `cat_name` varchar(255) NOT NULL,
   `cat_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `tenant_code` varchar(5) NOT NULL,
   PRIMARY KEY (`cat_id`),
   UNIQUE KEY `cat_name` (`cat_name`),
   FOREIGN KEY (`tenant_code`) REFERENCES `tenants`(`tenant_code`)
