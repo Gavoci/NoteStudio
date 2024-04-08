@@ -12,8 +12,6 @@ if ($FetchNotesresult->num_rows > 0) {
         $id = $FetchNotesrow['note_id'];
         $title = $FetchNotesrow['note_title'];
         $cat = $FetchNotesrow['note_cat'];
-        $tags = $FetchNotesrow['note_tags'];
-        $privacy = $FetchNotesrow['note_privacy'];
         $desc = $FetchNotesrow['note_desc'];
         $date = date("d M Y", strtotime($FetchNotesrow['note_date']));
 
