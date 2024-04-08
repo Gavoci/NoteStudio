@@ -89,6 +89,33 @@ ALTER TABLE `users`
 COMMIT;
 
 ```
+## riempi database
+
+```sql
+-- Aggiunta di un nuovo tenant
+INSERT INTO Tenants (Nome) VALUES ('NomeTuoTenant');
+
+-- Aggiunta di un nuovo utente con ruolo 1 (presumibilmente amministratore)
+INSERT INTO Users (Nome, Password, Ruolo, TenantID) 
+VALUES ('gavoci diego', 'Ciao.123', 1, (SELECT ID FROM Tenants WHERE Nome = 'NomeTuoTenant'));
+
+-- Aggiunta di 5 categorie
+INSERT INTO Categorie (Nome, TenantID) 
+VALUES ('Categoria1', (SELECT ID FROM Tenants WHERE Nome = 'NomeTuoTenant')),
+       ('Categoria2', (SELECT ID FROM Tenants WHERE Nome = 'NomeTuoTenant')),
+       ('Categoria3', (SELECT ID FROM Tenants WHERE Nome = 'NomeTuoTenant')),
+       ('Categoria4', (SELECT ID FROM Tenants WHERE Nome = 'NomeTuoTenant')),
+       ('Categoria5', (SELECT ID FROM Tenants WHERE Nome = 'NomeTuoTenant'));
+
+-- Aggiunta di 5 note
+INSERT INTO Note (Titolo, Testo, CategoriaID) 
+VALUES ('Titolo1', 'Testo della nota 1', (SELECT ID FROM Categorie WHERE Nome = 'Categoria1')),
+       ('Titolo2', 'Testo della nota 2', (SELECT ID FROM Categorie WHERE Nome = 'Categoria2')),
+       ('Titolo3', 'Testo della nota 3', (SELECT ID FROM Categorie WHERE Nome = 'Categoria3')),
+       ('Titolo4', 'Testo della nota 4', (SELECT ID FROM Categorie WHERE Nome = 'Categoria4')),
+       ('Titolo5', 'Testo della nota 5', (SELECT ID FROM Categorie WHERE Nome = 'Categoria5'));
+
+```
 
 **problema:**
 organizzazione appunti scolastici
