@@ -90,29 +90,6 @@ COMMIT;
 
 ```
 
-## RIEMPIRE IL DATABASE:
-
-```sql
-INSERT INTO `categories` (`cat_name`) VALUES
-('Categoria 1'),
-('Categoria 2'),
-('Categoria 3'),
-('Categoria 4');
-
-INSERT INTO `users` (`user_role`, `user_name`, `user_email`, `user_phone`, `user_age`, `user_gender`, `user_password`) VALUES
-(1, 'Masper', 'masper.mattia@gmail.com', '1234567890', 18, 'Maschio', 'password1'),
-(2, 'Sonzogni', 'sonzogni.gabriele@gmail.com', '0987654321', 18, 'Maschio', 'password2'),
-(3, 'Marcella', 'ferrari.marcella@gmail.com', '1122334455', 18, 'Femmina', 'password3'),
-(4, 'Gavoci', 'gavoci.diego@example.com', '5544332211', 18, 'Maschio', 'password4');
-
-INSERT INTO `notes` (`note_user`, `note_title`, `note_cat`, `note_tags`, `note_desc`, `note_privacy`, `notes_status`, `note_views`) VALUES
-(1, 'Nota 1', 1, 'tag1, tag2', 'Questa è la descrizione della nota 1.', 1, 1, 100),
-(2, 'Nota 2', 2, 'tag3, tag4', 'Questa è la descrizione della nota 2.', 1, 1, 200),
-(3, 'Nota 3', 3, 'tag5, tag6', 'Questa è la descrizione della nota 3.', 1, 1, 300),
-(4, 'Nota 4', 4, 'tag7, tag8', 'Questa è la descrizione della nota 4.', 1, 1, 400);
-
-```
-
 **problema:**
 organizzazione appunti scolastici
 
