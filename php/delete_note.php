@@ -17,23 +17,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" &&
         $stmtDeleteNote->execute();
 
         if ($stmtDeleteNote->affected_rows > 0) {
-
-            // Rimuovi la nota anche dalle note dell'utente
-            $sqlDeleteUserNote = "DELETE FROM user_notes WHERE note_id = ?";
-            $stmtDeleteUserNote = $conn->prepare($sqlDeleteUserNote);
-
-            if ($stmtDeleteUserNote) {
-                $stmtDeleteUserNote->bind_param("i", $noteId);
-                $stmtDeleteUserNote->execute();
-                $stmtDeleteUserNote->close();
-            }
+            $_SESSION['message'] = "Note deleted successfully!";
+            $_SESSION['type'] = "success";
+        } else {
+            $_SESSION['message'] = "Failed to delete note!";
+            $_SESSION['type'] = "danger";
         }
 
         $stmtDeleteNote->close();
+    } else {
+        $_SESSION['message'] = "Error in prepared statement: " . $conn->error;
+        $_SESSION['type'] = "danger";
     }
 }
 
-$redirect = $_SERVER['HTTP_REFERER'];
+$redirect = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '../index.php';
 header("Location: $redirect"); // Redirect to the relevant page
 exit();
 ?>
