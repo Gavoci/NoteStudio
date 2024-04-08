@@ -92,28 +92,35 @@ COMMIT;
 ## riempi database
 
 ```sql
--- Aggiunta di un nuovo tenant
-INSERT INTO Tenants (Nome) VALUES ('NomeTuoTenant');
+-- Inserimento del tenant
+INSERT INTO tenants (tenant_code, tenant_name) VALUES ('TNT01', 'tenant1');
 
--- Aggiunta di un nuovo utente con ruolo 1 (presumibilmente amministratore)
-INSERT INTO Users (Nome, Password, Ruolo, TenantID) 
-VALUES ('gavoci diego', 'Ciao.123', 1, (SELECT ID FROM Tenants WHERE Nome = 'NomeTuoTenant'));
+-- Inserimento dell'utente
+INSERT INTO users (user_role, user_name, user_email, user_phone, user_age, user_gender, user_password, tenant_code) 
+VALUES (1, 'gavoci', 'diegogavoci@gmail.com', '0000000000', 30, 'Male', 'password123', 'TNT01');
 
--- Aggiunta di 5 categorie
-INSERT INTO Categorie (Nome, TenantID) 
-VALUES ('Categoria1', (SELECT ID FROM Tenants WHERE Nome = 'NomeTuoTenant')),
-       ('Categoria2', (SELECT ID FROM Tenants WHERE Nome = 'NomeTuoTenant')),
-       ('Categoria3', (SELECT ID FROM Tenants WHERE Nome = 'NomeTuoTenant')),
-       ('Categoria4', (SELECT ID FROM Tenants WHERE Nome = 'NomeTuoTenant')),
-       ('Categoria5', (SELECT ID FROM Tenants WHERE Nome = 'NomeTuoTenant'));
+-- Inserimento delle categorie
+INSERT INTO categories (cat_name, tenant_code) VALUES 
+('Category 1', 'TNT01'),
+('Category 2', 'TNT01'),
+('Category 3', 'TNT01'),
+('Category 4', 'TNT01'),
+('Category 5', 'TNT01');
 
--- Aggiunta di 5 note
-INSERT INTO Note (Titolo, Testo, CategoriaID) 
-VALUES ('Titolo1', 'Testo della nota 1', (SELECT ID FROM Categorie WHERE Nome = 'Categoria1')),
-       ('Titolo2', 'Testo della nota 2', (SELECT ID FROM Categorie WHERE Nome = 'Categoria2')),
-       ('Titolo3', 'Testo della nota 3', (SELECT ID FROM Categorie WHERE Nome = 'Categoria3')),
-       ('Titolo4', 'Testo della nota 4', (SELECT ID FROM Categorie WHERE Nome = 'Categoria4')),
-       ('Titolo5', 'Testo della nota 5', (SELECT ID FROM Categorie WHERE Nome = 'Categoria5'));
+-- Recupero degli ID delle categorie appena inserite
+SET @category_start_id = LAST_INSERT_ID();
+
+-- Inserimento delle note per ogni categoria
+SET @category_id = @category_start_id;
+WHILE @category_id < @category_start_id + 5 DO
+    INSERT INTO notes (note_user, note_title, note_cat, note_tags, note_desc, note_privacy, notes_status, note_views, tenant_code) 
+    VALUES (1, CONCAT('Note Title for Category ', @category_id), @category_id, 'tag1,tag2', 'Description for Note in Category', 1, 1, 0, 'TNT01');
+    
+    INSERT INTO notes (note_user, note_title, note_cat, note_tags, note_desc, note_privacy, notes_status, note_views, tenant_code) 
+    VALUES (1, CONCAT('Another Note Title for Category ', @category_id), @category_id, 'tag3,tag4', 'Another Description for Note in Category', 1, 1, 0, 'TNT01');
+    
+    SET @category_id = @category_id + 1;
+END WHILE;
 
 ```
 
