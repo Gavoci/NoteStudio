@@ -43,12 +43,6 @@ if ($FetchNotesresult->num_rows > 0) {
 
                             </div>
                             <div class="col-12">
-                                <label for="title">Tags</label>
-                                <input type="text" name="tags" id="tags" class="form-control"
-                                    placeholder="Seprate tags with commas (,)" value="<?= $tags ?>">
-                                <div id="hashtags" class="my-2"></div>
-                            </div>
-                            <div class="col-12">
                                 <label for="desc">Write Notes</label>
                                 <textarea name="desc" id="inp_editor1" cols="30" rows="10"
                                     class="form-control"><?= $desc ?></textarea>
