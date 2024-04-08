@@ -19,7 +19,6 @@ if ($FetchNotesDetailsresult->num_rows > 0) {
                     $id = $FetchNotesDetailsrow['note_id'];
                     $title = $FetchNotesDetailsrow['note_title'];
                     $catName = $FetchNotesDetailsrow['cat_name'];
-                    $tags = $FetchNotesDetailsrow['note_tags'];
                     $views = $FetchNotesDetailsrow['note_views'];
                     $date = date("d M Y", strtotime($FetchNotesDetailsrow['note_date']));
                     ?>
