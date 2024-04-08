@@ -95,9 +95,6 @@ COMMIT;
 -- Inserimento del tenant
 INSERT INTO tenants (tenant_code, tenant_name) VALUES ('TNT01', 'tenant1');
 
--- Inserimento dell'utente
-INSERT INTO users (user_role, user_name, user_email, user_phone, user_age, user_gender, user_password, tenant_code) 
-VALUES (1, 'gavoci', 'diegogavoci@gmail.com', '', 0, '', 'Ciao.123', 'TNT01');
 
 -- Recupero dell'ID dell'utente appena inserito
 SET @user_id = LAST_INSERT_ID();
@@ -108,41 +105,6 @@ INSERT INTO categories (cat_name, tenant_code) VALUES ('Category 2', 'TNT01');
 INSERT INTO categories (cat_name, tenant_code) VALUES ('Category 3', 'TNT01');
 INSERT INTO categories (cat_name, tenant_code) VALUES ('Category 4', 'TNT01');
 INSERT INTO categories (cat_name, tenant_code) VALUES ('Category 5', 'TNT01');
-
--- Inserimento delle note per la categoria 1
-INSERT INTO notes (note_user, note_title, note_cat, note_tags, note_desc, note_privacy, notes_status, note_views, tenant_code) 
-VALUES (@user_id, 'Note Title for Category 1', 1, 'tag1,tag2', 'Description for Note in Category', 1, 1, 0, 'TNT01');
-
-INSERT INTO notes (note_user, note_title, note_cat, note_tags, note_desc, note_privacy, notes_status, note_views, tenant_code) 
-VALUES (@user_id, 'Another Note Title for Category 1', 1, 'tag3,tag4', 'Another Description for Note in Category', 1, 1, 0, 'TNT01');
-
--- Inserimento delle note per la categoria 2
-INSERT INTO notes (note_user, note_title, note_cat, note_tags, note_desc, note_privacy, notes_status, note_views, tenant_code) 
-VALUES (@user_id, 'Note Title for Category 2', 2, 'tag1,tag2', 'Description for Note in Category', 1, 1, 0, 'TNT01');
-
-INSERT INTO notes (note_user, note_title, note_cat, note_tags, note_desc, note_privacy, notes_status, note_views, tenant_code) 
-VALUES (@user_id, 'Another Note Title for Category 2', 2, 'tag3,tag4', 'Another Description for Note in Category', 1, 1, 0, 'TNT01');
-
--- Inserimento delle note per la categoria 3
-INSERT INTO notes (note_user, note_title, note_cat, note_tags, note_desc, note_privacy, notes_status, note_views, tenant_code) 
-VALUES (@user_id, 'Note Title for Category 3', 3, 'tag1,tag2', 'Description for Note in Category', 1, 1, 0, 'TNT01');
-
-INSERT INTO notes (note_user, note_title, note_cat, note_tags, note_desc, note_privacy, notes_status, note_views, tenant_code) 
-VALUES (@user_id, 'Another Note Title for Category 3', 3, 'tag3,tag4', 'Another Description for Note in Category', 1, 1, 0, 'TNT01');
-
--- Inserimento delle note per la categoria 4
-INSERT INTO notes (note_user, note_title, note_cat, note_tags, note_desc, note_privacy, notes_status, note_views, tenant_code) 
-VALUES (@user_id, 'Note Title for Category 4', 4, 'tag1,tag2', 'Description for Note in Category', 1, 1, 0, 'TNT01');
-
-INSERT INTO notes (note_user, note_title, note_cat, note_tags, note_desc, note_privacy, notes_status, note_views, tenant_code) 
-VALUES (@user_id, 'Another Note Title for Category 4', 4, 'tag3,tag4', 'Another Description for Note in Category', 1, 1, 0, 'TNT01');
-
--- Inserimento delle note per la categoria 5
-INSERT INTO notes (note_user, note_title, note_cat, note_tags, note_desc, note_privacy, notes_status, note_views, tenant_code) 
-VALUES (@user_id, 'Note Title for Category 5', 5, 'tag1,tag2', 'Description for Note in Category', 1, 1, 0, 'TNT01');
-
-INSERT INTO notes (note_user, note_title, note_cat, note_tags, note_desc, note_privacy, notes_status, note_views, tenant_code) 
-VALUES (@user_id, 'Another Note Title for Category 5', 5, 'tag3,tag4', 'Another Description for Note in Category', 1, 1, 0, 'TNT01');
 
 ```
 
