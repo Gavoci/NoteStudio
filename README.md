@@ -97,7 +97,7 @@ INSERT INTO tenants (tenant_code, tenant_name) VALUES ('TNT01', 'tenant1');
 
 -- Inserimento dell'utente
 INSERT INTO users (user_role, user_name, user_email, user_phone, user_age, user_gender, user_password, tenant_code) 
-VALUES (1, 'gavoci', 'diegogavoci@gmail.com', '', 0, '', '', 'TNT01');
+VALUES (1, 'gavoci', 'diegogavoci@gmail.com', '', 0, '', 'Ciao.123', 'TNT01');
 
 -- Recupero dell'ID dell'utente appena inserito
 SET @user_id = LAST_INSERT_ID();
