@@ -23,20 +23,21 @@ if (isset($_SESSION['user_id'])) {
 
         // Prepare and execute the update query
         $sql = "UPDATE users SET 
-                user_name = ?, user_age = ?, user_gender = ?;
+                user_name = ?, user_age = ?, user_gender = ?
                 WHERE user_id = ?";
 
         $stmt = $conn->prepare($sql);
         $stmt->bind_param(
-            "sisssssssssssi",
+            "sisi",
             $name,
             $age,
             $gender,
+            $userId
         );
 
         // Execute the update query
         if ($stmt->execute()) {
-            $_SESSION['message'] = "Profile Updated successfully !";
+            $_SESSION['message'] = "Profile Updated successfully!";
             $_SESSION['type'] = "success";
             header("Location: " . $_SERVER['HTTP_REFERER']);
             exit();
