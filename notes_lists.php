@@ -1,7 +1,7 @@
 <?php include 'partials/header.php'; ?>
 <?php include 'partials/navbar.php'; 
 
-$FetchNotesDetailssql = "SELECT * from notes INNER JOIN categories ON categories.cat_id = notes.note_cat where note_user = $userId AND notes_status = 0 ORDER BY `notes`.`note_id` DESC";
+$FetchNotesDetailssql = "SELECT * from notes INNER JOIN categories ON categories.cat_id = notes.note_cat where note_user = $userId ORDER BY `notes`.`note_id` DESC";
 $FetchNotesDetailsresult = $conn->query($FetchNotesDetailssql);
 
 if ($FetchNotesDetailsresult->num_rows > 0) {
