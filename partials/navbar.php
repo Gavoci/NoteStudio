@@ -20,15 +20,15 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Categories
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="new_category.php">New Category</a></li>
-                                <li><a class="dropdown-item" href="categories_list.php">categories list</a></li>
-                            </ul>
-                        </li>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="new_category.php">New Category</a></li>
+                            <li><a class="dropdown-item" href="categories_list.php">Categories List</a></li>
+                        </ul>
+                    </li>
 
                     <?php
                     if ($_SESSION['user_role'] == 1) {
@@ -36,12 +36,12 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                admin
+                                Admin
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="admin_notes_list.php">notes list</a></li>
-                                <li><a class="dropdown-item" href="admin_categories_list.php">categories list</a></li>
-                                <li><a class="dropdown-item" href="admin_users_list.php">user list</a></li>
+                                <li><a class="dropdown-item" href="admin_notes_list.php">Notes List</a></li>
+                                <li><a class="dropdown-item" href="admin_categories_list.php">Categories List</a></li>
+                                <li><a class="dropdown-item" href="admin_users_list.php">User List</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -50,9 +50,44 @@
                                 API's
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="http://localhost/NoteStudio-main/api/notes">api notes</a></li>
-                                <li><a class="dropdown-item" href="http://localhost/NoteStudio-main/api/categories">api categories</a></li>
-                                <li><a class="dropdown-item" href="http://localhost/NoteStudio-main/api/users">api users</a></li>
+                                <li><a class="dropdown-item" href="http://localhost/NoteStudio-main/api/notes">API Notes</a></li>
+                                <li><a class="dropdown-item" href="http://localhost/NoteStudio-main/api/categories">API Categories</a></li>
+                                <li><a class="dropdown-item" href="http://localhost/NoteStudio-main/api/users">API Users</a></li>
+                            </ul>
+                        </li>
+                        <?php
+                    } elseif ($_SESSION['user_role'] == 2) {
+                        ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Tenants
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="new_tenant.php">New Tenant</a></li>
+                                <li><a class="dropdown-item" href="update_tenant.php">Tenants List</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Admin
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="admin_notes_list.php">Notes List</a></li>
+                                <li><a class="dropdown-item" href="admin_categories_list.php">Categories List</a></li>
+                                <li><a class="dropdown-item" href="admin_users_list.php">User List</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                API's
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="http://localhost/NoteStudio-main/api/notes">API Notes</a></li>
+                                <li><a class="dropdown-item" href="http://localhost/NoteStudio-main/api/categories">API Categories</a></li>
+                                <li><a class="dropdown-item" href="http://localhost/NoteStudio-main/api/users">API Users</a></li>
                             </ul>
                         </li>
                         <?php
@@ -66,7 +101,7 @@
                         <?= $_SESSION['user_name'] ?>
                     </button>
                     <ul class="dropdown-menu p-2">
-                    <li><a class="dropdown-item" href="editUserprofile.php"><i
+                        <li><a class="dropdown-item" href="editUserprofile.php"><i
                                     class="bi bi-pencil-square me-2"></i>Edit Profile </a></li>
                         <li><a class="dropdown-item" href="php/user_logout.php"><i
                                     class="bi bi-box-arrow-left me-2"></i>Logout</a></li>
