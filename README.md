@@ -10,6 +10,10 @@ modificare l'user_role da 0 a 1
 ## MODELLO FISICO:
 
 ```sql
+DROP DATABASE IF EXISTS NoteStudio;
+CREATE DATABASE NoteStudio;
+USE NoteStudio;
+
 CREATE DATABASE IF NOT EXISTS NoteStudio;
 USE NoteStudio;
 
@@ -76,6 +80,7 @@ ALTER TABLE `users`
   MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 COMMIT;
+
 
 ```
 ## riempi database
