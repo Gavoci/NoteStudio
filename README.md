@@ -7,11 +7,6 @@ docker run --name myXampp -p 41061:22 -p 41062:80 -d -v /workspaces/NoteStudio:/
 **diventare admin:**
 modificare l'user_role da 0 a 1
 ```
-http://localhost/NoteStudio-main/index.php
-```
-```
-http://localhost/phpmyadmin/
-```
 ## MODELLO FISICO:
 
 ```sql
