@@ -54,7 +54,6 @@ CREATE TABLE `notes` (
   `note_id` int(10) NOT NULL AUTO_INCREMENT,
   `note_user` int(10) NOT NULL,
   `note_title` varchar(255) NOT NULL,
-  `note_tags` varchar(255) NOT NULL,
   `note_desc` longtext NOT NULL,
   `notes_status` int(10) NOT NULL,
   `note_views` int(10) NOT NULL,
