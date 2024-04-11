@@ -1,40 +1,41 @@
 <?php
 session_start();
-include("../config.php");
+include("../config.php"); // Assicurati che il percorso sia corretto
 
-function isAlreadyRegistered($conn, $email, $phone)
-{
+function isAlreadyRegistered($conn, $email, $phone) {
     $stmt = $conn->prepare("SELECT * FROM users WHERE user_email = ? OR user_phone = ?");
     $stmt->bind_param('ss', $email, $phone);
     $stmt->execute();
     $result = $stmt->get_result();
     $count = $result->num_rows;
-    return $count > 0 ? true : false;
+    return $count > 0;
 }
 
-function isValidPassword($password)
-{
+function isValidPassword($password) {
     if (strlen($password) < 8) {
         return false;
     }
-
     if (!preg_match('/[A-Z]/', $password)) {
         return false;
     }
-
     if (!preg_match('/[a-z]/', $password)) {
         return false;
     }
-
     if (!preg_match('/[0-9]/', $password)) {
         return false;
     }
-
     if (!preg_match('/[\W]/', $password)) {
         return false;
     }
-
     return true;
+}
+
+function isTenantExist($conn, $tenant_code) {
+    $stmt = $conn->prepare("SELECT * FROM tenants WHERE tenant_code = ?");
+    $stmt->bind_param('s', $tenant_code);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result->num_rows > 0;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -46,6 +47,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
     $tenant_code = filter_var($_POST['tenant_code'], FILTER_SANITIZE_STRING);
+
+    if (!isTenantExist($conn, $tenant_code)) {
+        $_SESSION['type'] = "danger";
+        $_SESSION['message'] = "Tenant not found!";
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        exit();
+    }
 
     if ($age < 8) {
         $_SESSION['type'] = "danger";
@@ -66,40 +74,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    $password = password_hash($password, PASSWORD_DEFAULT);
+    if ($password !== $confirmPassword) {
+        $_SESSION['type'] = "danger";
+        $_SESSION['message'] = "Passwords do not match!";
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        exit();
+    }
 
     if (isAlreadyRegistered($conn, $email, $phone)) {
         $_SESSION['type'] = "danger";
         $_SESSION['message'] = "Email or phone number already registered!";
         header("Location: " . $_SERVER['HTTP_REFERER']);
         exit();
-    } else {
-        if (strlen($phone) === 10 && is_numeric($phone)) {
-            $hashedConfirmPassword = password_hash($confirmPassword, PASSWORD_DEFAULT);
+    }
 
-            if (!password_verify($confirmPassword, $hashedConfirmPassword)) {
-                $_SESSION['type'] = "danger";
-                $_SESSION['message'] = "Passwords do not match!";
-                header("Location: " . $_SERVER['HTTP_REFERER']);
-                exit();
-            }
+    $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO users (user_name, user_email, user_phone, user_age, user_gender, user_password, user_role, tenant_code)
-                    VALUES ('$name', '$email', '$phone', '$age', '$gender', '$password', 0, '$tenant_code')";
+    if (strlen($phone) === 10 && is_numeric($phone)) {
+        // Preparazione della query con i parametri corretti per evitare SQL Injection
+        $stmt = $conn->prepare("INSERT INTO users (user_name, user_email, user_phone, user_age, user_gender, user_password, user_role, tenant_code) VALUES (?, ?, ?, ?, ?, ?, 0, ?)");
+        $stmt->bind_param('sssiiss', $name, $email, $phone, $age, $gender, $passwordHashed, $tenant_code);
 
-            $stmt = $conn->prepare($sql);
-            $stmt->execute();
-
+        if ($stmt->execute()) {
             $_SESSION['type'] = "success";
             $_SESSION['message'] = "User registered successfully!";
             header("Location: ../index.php");
             exit();
         } else {
             $_SESSION['type'] = "danger";
-            $_SESSION['message'] = "Invalid Phone Number!";
+            $_SESSION['message'] = "There was a problem with the user registration.";
             header("Location: " . $_SERVER['HTTP_REFERER']);
             exit();
         }
+    } else {
+        $_SESSION['type'] = "danger";
+        $_SESSION['message'] = "Invalid Phone Number!";
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        exit();
     }
 }
 ?>
