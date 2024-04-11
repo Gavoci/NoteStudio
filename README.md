@@ -59,7 +59,6 @@ CREATE TABLE `notes` (
   `note_user` int(10) NOT NULL,
   `note_title` varchar(255) NOT NULL,
   `note_desc` longtext NOT NULL,
-  `notes_status` int(10) NOT NULL,
   `note_views` int(10) NOT NULL,
   `note_cat` int(10) NOT NULL,
   `note_date` datetime NOT NULL DEFAULT current_timestamp(),
