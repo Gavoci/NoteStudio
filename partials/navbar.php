@@ -65,7 +65,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="new_tenant.php">New Tenant</a></li>
-                                <li><a class="dropdown-item" href="update_tenant.php">Tenants List</a></li>
+                                <li><a class="dropdown-item" href="tenant_list.php">Tenants List</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
