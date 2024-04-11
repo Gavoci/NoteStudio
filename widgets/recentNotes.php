@@ -2,7 +2,7 @@
             <h5 class="fw-bold mb-4">Recent Notes </h5>
             <div class="row g-2">
                 <?php
-                $FetchNotesDetailssql = "SELECT * from notes INNER JOIN categories ON categories.cat_id = notes.note_cat where note_user = $userId AND notes_status = 0 ORDER BY `notes`.`note_id` DESC LIMIT 4";
+                $FetchNotesDetailssql = "SELECT * from notes INNER JOIN categories ON categories.cat_id = notes.note_cat where note_user = $userId ORDER BY `notes`.`note_id` DESC LIMIT 4";
                 $FetchNotesDetailsresult = $conn->query($FetchNotesDetailssql);
 
                 if ($FetchNotesDetailsresult->num_rows > 0) {
@@ -11,7 +11,6 @@
                         $id = $FetchNotesDetailsrow['note_id'];
                         $title = $FetchNotesDetailsrow['note_title'];
                         $catName = $FetchNotesDetailsrow['cat_name'];
-                        $tags = $FetchNotesDetailsrow['note_tags'];
                         $views = $FetchNotesDetailsrow['note_views'];
                         $date = date("d M Y", strtotime($FetchNotesDetailsrow['note_date']));
                         ?>
