@@ -22,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $tenantCode = $row['tenant_code'];
 
             // Prepare and execute the SQL query to insert form data into the database
-            $stmt = $conn->prepare("INSERT INTO notes (note_user, note_title, note_cat, note_desc, tenant_code)
-                VALUES (?, ?, ?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO notes (note_user, note_title, note_cat, note_desc, note_views, tenant_code)
+                VALUES (?, ?, ?, ?, 0, ?)"); // Imposta note_views a 0
             $stmt->bind_param("issss", $userId, $title, $category, $description, $tenantCode);
 
             if ($stmt->execute()) {
