@@ -21,6 +21,15 @@ if ($FetchCategoriesDetailsresult->num_rows > 0) {
                     $cat_id = $FetchCategoriesDetailsrow['cat_id'];
                     $cat_name = $FetchCategoriesDetailsrow['cat_name'];
                     $cat_date = date("d M Y", strtotime($FetchCategoriesDetailsrow['cat_date']));
+
+                    // Ottieni il tenant code
+                    $tenantCodeQuery = "SELECT tenant_code FROM users WHERE user_id = '$user_id'";
+                    $tenantCodeResult = $conn->query($tenantCodeQuery);
+                    $tenant_code = "";
+                    if ($tenantCodeResult->num_rows > 0) {
+                        $tenant_row = $tenantCodeResult->fetch_assoc();
+                        $tenant_code = $tenant_row['tenant_code'];
+                    }
                     ?>
                     <div class="col-12">
                         <div class="card ">
@@ -34,8 +43,13 @@ if ($FetchCategoriesDetailsresult->num_rows > 0) {
                                         <p class="text-secondary fs-14 mb-0">
                                             <?= $cat_date ?>
                                         </p>
+                                         <!-- Visualizza il tenant code sotto la data -->
+                                         <p class="text-secondary fs-14 mb-0">
+                                            <span class="fw-bold">Tenant Code:</span> <?= $tenant_code ?>
+                                        </p>
                                     </div>
                                     <div class="col-lg-4 d-none d-lg-block">
+                                        <!-- Dropdown per le azioni -->
                                         <div class="dropdown">
                                             <button class="btn btn-light border btn-sm dropdown-toggle" type="button"
                                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,7 +62,7 @@ if ($FetchCategoriesDetailsresult->num_rows > 0) {
                                             </ul>
                                         </div>
                                     </div>
-                                    <!-- delete modal  -->
+                                    <!-- Modal per eliminare -->
                                     <div class="modal fade" id="deleteModal-<?= $cat_id ?>" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">
@@ -77,7 +91,7 @@ if ($FetchCategoriesDetailsresult->num_rows > 0) {
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- delete modal end  -->
+                                    <!-- Fine modal -->
                                 </div>
                             </div>
                         </div>
