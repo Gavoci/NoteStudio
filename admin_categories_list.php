@@ -36,7 +36,7 @@ if ($tenantCodeResult->num_rows > 0) {
                                         <div class="col-md-12 col-lg-8">
                                             <p class="text-secondary mb-0 fs-14 text-capitalize">
                                                 <i class="bi bi-bookmark-fill"></i>
-                                                <?= $cat_name ?>
+                                                <span class="fw-bold"><?= $cat_name ?></span>
                                             </p>
                                             <p class="text-secondary fs-14 mb-0">
                                                 <?= $cat_date ?>
