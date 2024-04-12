@@ -71,17 +71,6 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Admin
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="admin_notes_list.php">Notes List</a></li>
-                                <li><a class="dropdown-item" href="admin_categories_list.php">Categories List</a></li>
-                                <li><a class="dropdown-item" href="admin_users_list.php">User List</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
                                 Super Admin
                             </a>
                             <ul class="dropdown-menu">
