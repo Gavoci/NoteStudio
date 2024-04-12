@@ -82,3 +82,4 @@ include 'partials/navbar.php';
     </section>
 </main>
 <?php include 'partials/javascripts.php'; ?>
+
