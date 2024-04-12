@@ -7,13 +7,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name'], $_POST['age']
     $name = $_POST['name'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
+    
+    // Check if user role field is set and the user role is 2 (Admin)
+    if (isset($_POST['userRole']) && $_POST['userRole'] === '1') {
+        $userRole = 1; // Set user role to 1 (Admin)
+    } else {
+        $userRole = 0; // Set user role to 0 (User)
+    }
 
     // Prepare and execute the query to update user details
-    $updateQuery = "UPDATE users SET user_name = ?, user_age = ?, user_gender = ? WHERE user_id = ?";
+    $updateQuery = "UPDATE users SET user_name = ?, user_age = ?, user_gender = ?, user_role = ? WHERE user_id = ?";
     $stmt = $conn->prepare($updateQuery);
 
     if ($stmt) {
-        $stmt->bind_param("sisi", $name, $age, $gender, $userId);
+        $stmt->bind_param("sisii", $name, $age, $gender, $userRole, $userId);
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
