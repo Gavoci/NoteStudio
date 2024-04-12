@@ -1,132 +1,120 @@
 <?php include 'partials/header.php'; ?>
-<?php include 'partials/navbar.php'; ?>
+<?php include 'partials/navbar.php'; 
 
-<main>
-    <div class="container my-4">
-        <?php include 'widgets/search_box_utenti.php'; ?>
-        <h5 class="fw-bold">Users List</h5>
-        <div class="row g-3" id="userListContainer">
-            <?php
-            if (isset($_POST['search']) && !empty($_POST['search'])) {
-                // Se è stata effettuata una ricerca, mostra solo gli utenti corrispondenti
-                include 'php/user_search_ajax.php';
-            } else {
-                // Se non c'è stata ancora nessuna ricerca, mostra l'intera lista di utenti
-                $user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['user_id'];
 
-                // Query per ottenere il tenant_code dell'utente dalla tabella users
-                $tenantCodeQuery = "SELECT tenant_code FROM users WHERE user_id = '$user_id'";
-                $tenantCodeResult = $conn->query($tenantCodeQuery);
+// Query per ottenere il tenant_code dell'utente dalla tabella users
+$tenantCodeQuery = "SELECT tenant_code FROM users WHERE user_id = '$user_id'";
+$tenantCodeResult = $conn->query($tenantCodeQuery);
 
-                if ($tenantCodeResult->num_rows > 0) {
-                    $tenant_row = $tenantCodeResult->fetch_assoc();
-                    $tenant_code = $tenant_row['tenant_code'];
+if ($tenantCodeResult->num_rows > 0) {
+    $tenant_row = $tenantCodeResult->fetch_assoc();
+    $tenant_code = $tenant_row['tenant_code'];
 
-                    // Query per ottenere gli utenti associati al tenant_code
-                    $FetchUsersDetailssql = "SELECT user_id, user_name, user_email, user_role, user_joined FROM users WHERE tenant_code = '$tenant_code'";
-                    $FetchUsersDetailsresult = $conn->query($FetchUsersDetailssql);
+    // Query per ottenere gli utenti associati al tenant_code
+    $fetchUsersQuery = "SELECT * FROM users WHERE tenant_code = '$tenant_code'";
+    $fetchUsersResult = $conn->query($fetchUsersQuery);
 
-                    if ($FetchUsersDetailsresult) {
-                        while ($FetchUsersDetailsrow = $FetchUsersDetailsresult->fetch_assoc()) {
-                            // Costruisci il markup HTML per ogni utente direttamente qui
-                            echo '<div class="col-12">';
-                            echo '<div class="card">';
-                            echo '<div class="card-body">';
-                            echo '<div class="row align-items-center">';
-                            echo '<div class="col-md-12 col-lg-8">';
-                            echo '<p class="text-secondary mb-0 fs-14 text-capitalize">';
-                            echo '<i class="bi bi-person-fill"></i>';
-                            echo $FetchUsersDetailsrow['user_name'];
-                            echo '</p>';
-                            echo '<p class="text-secondary fs-14 mb-0">';
-                            echo $FetchUsersDetailsrow['user_email'];
-                            echo '</p>';
-                            echo '<p class="text-secondary fs-14 mb-0">';
-                            echo ($FetchUsersDetailsrow['user_role'] == 1) ? 'Admin' : 'User';
-                            echo '</p>';
-                            echo '<p class="text-secondary fs-14 mb-0">';
-                            echo 'Joined on ' . date("d M Y", strtotime($FetchUsersDetailsrow['user_joined']));
-                            echo '</p>';
-                            echo '</div>';
-                            // Aggiungi dropdown con le opzioni di edit e delete
-                            echo '<div class="col-lg-4 d-none d-lg-block">';
-                            echo '<div class="dropdown">';
-                            echo '<button class="btn btn-light border btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
-                            echo 'Action';
-                            echo '</button>';
-                            echo '<ul class="dropdown-menu">';
-                            echo '<li><a class="dropdown-item" href="edit_user.php?userId=' . $FetchUsersDetailsrow['user_id'] . '"><i class="bi bi-pencil-square me-2"></i> Edit</a></li>';
-                            echo '<li><a class="dropdown-item delete-user" href="#" data-user-id="' . $FetchUsersDetailsrow['user_id'] . '"><i class="bi bi-trash me-2"></i> Delete</a></li>';
-                            echo '</ul>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-                        }
-                    } else {
-                        echo '<div class="col-12"><p class="text-secondary">Error fetching users</p></div>';
-                    }
-                }
-            }
-            ?>
-        </div>
-    </div>
-</main>
-
+    if ($fetchUsersResult->num_rows > 0) {
+        ?>
+        <main>
+            <div class="container my-4">
+                <?php include 'widgets/search_box.php'; ?>
+                <h5 class="fw-bold">User List</h5>
+                <div class="row g-3">
+                    <?php
+                    while ($user = $fetchUsersResult->fetch_assoc()) {
+                        // set data 
+                        $user_id = $user['user_id'];
+                        $user_name = $user['user_name'];
+                        $user_email = $user['user_email'];
+                        $user_phone = $user['user_phone'];
+                        $user_age = $user['user_age'];
+                        $user_joined = date("d M Y", strtotime($user['user_joined']));
+                        ?>
+                        <div class="col-12">
+                            <div class="card ">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 col-lg-8">
+                                            <p class="text-secondary mb-0 fs-14 text-capitalize">
+                                                <i class="bi bi-person-fill"></i>
+                                                <span class="fw-bold"><?= $user_name ?></span>
+                                            </p>
+                                            <p class="text-secondary fs-14 mb-0">
+                                                <?= $user_email ?>
+                                            </p>
+                                            <p class="text-secondary fs-14 mb-0">
+                                                <?= $user_phone ?>
+                                            </p>
+                                            <p class="text-secondary fs-14 mb-0">
+                                                <?= $user_age ?> years old
+                                            </p>
+                                            <p class="text-secondary fs-14 mb-0">
+                                                Joined on <?= $user_joined ?>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 d-none d-lg-block">
+                                            <div class="dropdown">
+                                                <button class="btn btn-light border btn-sm dropdown-toggle" type="button"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Action
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="edit_user.php?userId=<?= $user_id ?>"><i class="bi bi-pencil-square me-2"></i> Edit</a></li>
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#deleteModal-<?= $user_id ?>"><i class="bi bi-trash me-2"></i> Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- delete modal  -->
+                                        <div class="modal fade" id="deleteModal-<?= $user_id ?>" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel"> <i
+                                                                class="bi bi-exclamation-triangle-fill"></i> Are you sure ? </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        This action <b>CANNOT</b> be undone. This will permanently delete the user <b>
+                                                            <?= $user_name ?>
+                                                        </b>.
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light border"
+                                                            data-bs-dismiss="modal">No, Keep it.</button>
+                                                        <form action="php/delete_user.php" method="post">
+                                                            <input type="hidden" name="userId" value="<?= $user_id ?>">
+                                                            <input type="hidden" name="status" value="1">
+                                                            <button type="submit" class="btn btn-danger" name="delete_user">Yes,
+                                                                Delete <i class="bi bi-trash"></i></button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- delete modal end  -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </main>
+    <?php } else { ?>
+        <main>
+            <div class="container my-4">
+                <div class="card rounded-4 border shadow-sm">
+                    <div class="card-body text-center">
+                        <h5 class="fw-bold">No Users found!</h5>
+                    </div>
+                </div>
+            </div>
+        </main>
+    <?php } ?>
+<?php } ?>
 <?php include 'partials/javascripts.php'; ?>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-    $(document).ready(function() {
-        // Funzione per gestire la ricerca utenti tramite AJAX
-        function searchUsers(query) {
-            $.ajax({
-                url: 'php/user_search_ajax.php',
-                type: 'POST',
-                data: { search: query },
-                success: function(response) {
-                    $('#userListContainer').html(response);
-                },
-                error: function(xhr, status, error) {
-                    console.error(xhr.responseText);
-                }
-            });
-        }
-
-        // Gestisce la ricerca quando viene inviato il modulo di ricerca
-        $('form#userSearchForm').submit(function(event) {
-            event.preventDefault();
-            var searchQuery = $('input[name="search"]').val();
-            searchUsers(searchQuery);
-        });
-    });
-
-    // Gestisce l'eliminazione dell'utente tramite AJAX
-    $('.delete-user').click(function(event) {
-        event.preventDefault();
-        var userId = $(this).data('user-id');
-        var userContainer = $(this).closest('.col-12');  // Ottieni il contenitore dell'utente
-
-        if (confirm('Are you sure you want to delete this user?')) {
-            $.ajax({
-                url: 'php/delete_user_ajax.php',
-                type: 'POST',
-                data: { userId: userId },
-                success: function(response) {
-                    if (response === 'success') {
-                        // Rimuovi visivamente l'utente dalla lista
-                        userContainer.fadeOut('fast', function() {
-                            $(this).remove();
-                        });
-                    } else {
-                        console.error('Error deleting user');
-                    }
-                },
-                error: function(xhr, status, error) {
-                    console.error(xhr.responseText);
-                }
-            });
-        }
-    });
-</script>
