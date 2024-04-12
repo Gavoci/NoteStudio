@@ -2,17 +2,6 @@
 include 'partials/header.php';
 include 'partials/navbar.php'; 
 
-$user_id = $_SESSION['user_id'];
-
-// Query per ottenere il tenant_code dell'utente dalla tabella users
-$tenantCodeQuery = "SELECT tenant_code FROM users WHERE user_id = '$user_id'";
-$tenantCodeResult = $conn->query($tenantCodeQuery);
-$tenant_code = "";
-if ($tenantCodeResult->num_rows > 0) {
-    $tenant_row = $tenantCodeResult->fetch_assoc();
-    $tenant_code = $tenant_row['tenant_code'];
-}
-
 // Query per ottenere le note
 $FetchNotesDetailssql = "SELECT * FROM notes";
 $FetchNotesDetailsresult = $conn->query($FetchNotesDetailssql);
@@ -30,6 +19,8 @@ if ($FetchNotesDetailsresult->num_rows > 0) {
                     $title = $FetchNotesDetailsrow['note_title'];
                     $views = $FetchNotesDetailsrow['note_views'];
                     $date = date("d M Y", strtotime($FetchNotesDetailsrow['note_date']));
+                    $tenant_code = $FetchNotesDetailsrow['tenant_code']; // Codice tenant
+
                     ?>
                     <div class="col-12">
                         <div class="card">
@@ -57,9 +48,7 @@ if ($FetchNotesDetailsresult->num_rows > 0) {
                                         <p class="text-secondary fs-14 mb-0">
                                             <?= $date ?>
                                         </p>
-                                        <p class="text-secondary fs-14 mb-0">
-                                            <span class="fw-bold">Tenant Code:</span> <?= $tenant_code ?>
-                                        </p>
+                                        <p class="text-secondary fs-14 mb-0"><strong>Tenant Code:</strong> <?= $tenant_code ?></p> <!-- Codice tenant -->
                                     </div>
                                     <div class="col-lg-4 d-none d-lg-block">
                                         <!-- Dropdown per le azioni -->
