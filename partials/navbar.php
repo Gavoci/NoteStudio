@@ -82,6 +82,18 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
+                                Super Admin
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="super_notes_list.php">Super Notes List</a></li>
+                                <li><a class="dropdown-item" href="super_categories_list.php">Super Categories List</a></li>
+                                <li><a class="dropdown-item" href="super_user_list.php">Super User List</a></li>
+                                <li><a class="dropdown-item" href="super_admin_list.php">Super Admin List</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 API's
                             </a>
                             <ul class="dropdown-menu">
