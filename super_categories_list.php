@@ -12,7 +12,6 @@ if ($FetchCategoriesDetailsresult->num_rows > 0) {
     ?>
     <main>
         <div class="container my-4">
-            <?php include 'widgets/search_box.php'; ?>
             <h5 class="fw-bold">Categories List</h5>
             <div class="row g-3">
                 <?php
