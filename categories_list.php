@@ -1,54 +1,57 @@
-<?php include 'partials/header.php'; ?>
-<?php include 'partials/navbar.php'; 
+<?php 
+include 'partials/header.php';
+include 'partials/navbar.php'; 
 
-$FetchNotesDetailssql = "SELECT * from categories ORDER BY `categories`.`cat_name` ASC";
-$FetchNotesDetailsresult = $conn->query($FetchNotesDetailssql);
+$user_id = $_SESSION['user_id'];
 
+// Query per ottenere le categorie con il numero di note per categoria e il tenant code
+$FetchCategoriesDetailssql = "SELECT c.cat_id, c.cat_name, COUNT(n.note_id) AS num_notes 
+                              FROM categories c
+                              LEFT JOIN notes n ON c.cat_id = n.note_cat
+                              GROUP BY c.cat_id
+                              ORDER BY c.cat_name ASC";
+$FetchCategoriesDetailsresult = $conn->query($FetchCategoriesDetailssql);
+
+if ($FetchCategoriesDetailsresult->num_rows > 0) {
     ?>
     <main>
         <div class="container my-4">
-        <h6 class="fw-bold my-3">Categories</h6>
-        <ul class="list-group list-group-numbered">
-            <?php
-            $FetchCategoriessql = "SELECT * from categories ORDER BY `categories`.`cat_name` ASC";
-            $FetchCategoriesresult = $conn->query($FetchCategoriessql);
-                
-            if ($FetchCategoriesresult->num_rows > 0) {
-                // Output data of each row
-                while ($FetchCategoriesrow = $FetchCategoriesresult->fetch_assoc()) {
-                    $catId = $FetchCategoriesrow["cat_id"];
-                    $catName = $FetchCategoriesrow['cat_name'];
-                        
-                    // Get total notes for the category
-                    $totalNotes = countNotesByCategoryId($catId);
-
-                        ?>
-                        <li class="list-group-item p-3 d-flex justify-content-between align-items-start">
-                            <div class="ms-2 me-auto">
-                                <div class="fw-bold text-capitalize">
-                                    <a href="#" class="notesTitleLink">
-                                        <?= $catName ?>
-                                    </a>
-                                </div>
-                            </div>
-                            <span class="">
-                                <?= $totalNotes ?>
-                            </span>
-                        </li>
-                        <?php
-                }
-            } else {
-                ?>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">No Categories</div>
-                    </div>
-                </li>
+            <h5 class="fw-bold">Categories List</h5>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
                 <?php
-            }
-                ?>
-            </ul>  
+                while ($FetchCategoriesDetailsrow = $FetchCategoriesDetailsresult->fetch_assoc()) {
+                    // set data 
+                    $cat_id = $FetchCategoriesDetailsrow['cat_id'];
+                    $cat_name = $FetchCategoriesDetailsrow['cat_name'];
+                    $num_notes = $FetchCategoriesDetailsrow['num_notes'];
+                    ?>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="text-secondary mb-0 fs-14 text-capitalize">
+                                    <i class="bi bi-bookmark-fill"></i>
+                                    <span class="fw-bold"><?= $cat_name ?></span>
+                                </p>
+                                <!-- Visualizza solo il numero di note -->
+                                <p class="text-secondary fs-14 mb-0">
+                                    <span class="fw-bold">notes:</span> <?= $num_notes ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
         </div>
     </main>
-
+<?php } else { ?>
+    <main>
+        <div class="container my-4">
+            <div class="card rounded-4 border shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="fw-bold">No Categories record found!</h5>
+                </div>
+            </div>
+        </div>
+    </main>
+<?php } ?>
 <?php include 'partials/javascripts.php'; ?>
