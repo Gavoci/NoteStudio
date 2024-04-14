@@ -20,6 +20,7 @@ if ($tenantCodeResult->num_rows > 0) {
         <main>
             <div class="container my-4">
                 <h5 class="fw-bold">Categories List</h5>
+                <?php include 'widgets/alert_message.php'; ?>
                 <div class="row g-3">
                     <?php
                     while ($FetchCategoriesDetailsrow = $FetchCategoriesDetailsresult->fetch_assoc()) {
