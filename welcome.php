@@ -1,6 +1,6 @@
 <?php include 'partials/header.php';
 include 'partials/navbar.php'; ?>
-<main style="margin-top: 5rem;">
+<main style="margin-top: 6.5rem;">
     <section>
         <div class="container my-4">
             <div class="row g-3">
