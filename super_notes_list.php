@@ -20,6 +20,12 @@ if ($FetchNotesDetailsresult->num_rows > 0) {
                 $views = $FetchNotesDetailsrow['note_views'];
                 $date = date("d M Y", strtotime($FetchNotesDetailsrow['note_date']));
                 $tenant_code = $FetchNotesDetailsrow['tenant_code']; // Codice tenant
+                $category_id = $FetchNotesDetailsrow['note_cat'];
+
+                // Query per ottenere il nome della categoria
+                $categoryQuery = "SELECT cat_name FROM categories WHERE cat_id = '$category_id'";
+                $categoryResult = $conn->query($categoryQuery);
+                $categoryName = ($categoryResult->num_rows > 0) ? $categoryResult->fetch_assoc()['cat_name'] : 'No Category';
 
                 ?>
                 <div class="col">
@@ -39,7 +45,9 @@ if ($FetchNotesDetailsresult->num_rows > 0) {
                                         <p class="text-secondary fs-14 mb-0"><i class="bi bi-eye-fill"></i>
                                             <?= $views ?> View<?= $views == 1 ? '' : 's' ?>
                                         </p>
-
+                                        <p class="text-secondary fs-14 mb-0">
+                                            <strong><i class="bi bi-bookmark-fill"></i></strong> <?= $categoryName ?>
+                                        </p>
                                         <p class="text-secondary fs-14 mb-0">
                                             <?= $date ?>
                                         </p>
