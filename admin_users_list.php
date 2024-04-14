@@ -31,11 +31,11 @@ if ($tenantCodeResult->num_rows > 0) {
                         $user_age = $user['user_age'];
                         $user_joined = date("d M Y", strtotime($user['user_joined']));
                         ?>
-                        <div class="col-12">
-                            <div class="card ">
+                        <div class="col-md-4"> <!-- Modificato a col-md-4 per mostrare le cards su tre colonne -->
+                            <div class="card">
                                 <div class="card-body">
                                     <div class="row align-items-center">
-                                        <div class="col-md-12 col-lg-8">
+                                        <div class="col-md-8">
                                             <p class="text-secondary mb-0 fs-14 text-capitalize">
                                                 <i class="bi bi-person-fill"></i>
                                                 <span class="fw-bold"><?= $user_name ?></span>
@@ -53,7 +53,7 @@ if ($tenantCodeResult->num_rows > 0) {
                                                 Joined on <?= $user_joined ?>
                                             </p>
                                         </div>
-                                        <div class="col-lg-4 d-none d-lg-block">
+                                        <div class="col-md-4 d-none d-md-block"> <!-- Aggiunta la classe d-md-block per nascondere il dropdown su schermi più piccoli -->
                                             <div class="dropdown">
                                                 <button class="btn btn-light border btn-sm dropdown-toggle" type="button"
                                                     data-bs-toggle="dropdown" aria-expanded="false">
