@@ -36,12 +36,10 @@ if ($FetchNotesDetailsresult->num_rows > 0) {
                                                 <?= $title ?>
                                             </h6>
                                         </a>
-                                        <?php if ($views > 0) { ?>
-                                            <p class="text-secondary fs-14 mb-0"><i class="bi bi-eye-fill"></i>
-                                                <?= $views ?>
-                                                Views
-                                            </p>
-                                        <?php } ?>
+                                        <p class="text-secondary fs-14 mb-0"><i class="bi bi-eye-fill"></i>
+                                            <?= $views ?> View<?= $views == 1 ? '' : 's' ?>
+                                        </p>
+
                                         <p class="text-secondary fs-14 mb-0">
                                             <?= $date ?>
                                         </p>
