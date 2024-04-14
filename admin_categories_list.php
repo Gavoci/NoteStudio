@@ -43,7 +43,7 @@ if ($tenantCodeResult->num_rows > 0) {
                                             <div class="dropdown">
                                                 <button class="btn btn-light border btn-sm dropdown-toggle" type="button"
                                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                                    Action
+                                                    <i class="bi bi-chevron-down"></i>
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end">
                                                     <li><a class="dropdown-item" href="edit_category.php?catId=<?= $cat_id ?>"><i class="bi bi-pencil-square me-2"></i> Edit</a></li>
