@@ -46,7 +46,7 @@ if ($FetchNotesDetailsresult->num_rows > 0) {
                                                 </p>
                                             </div>
                                             <div class="dropdown">
-                                                <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <button class="btn btn-light border btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="bi bi-chevron-down"></i> <!-- Icona cambiata qui -->
                                                 </button>
                                                 <ul class="dropdown-menu">
