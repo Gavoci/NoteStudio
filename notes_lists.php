@@ -2,14 +2,17 @@
 <?php include 'partials/navbar.php'; 
 
 $userId = $_SESSION['user_id']; // Assicurati di avere definito $userId
-$FetchNotesDetailssql = "SELECT * from notes INNER JOIN categories ON categories.cat_id = notes.note_cat where note_user = $userId ORDER BY `notes`.`note_id` DESC";
+$FetchNotesDetailssql = "SELECT * FROM notes 
+    INNER JOIN categories ON categories.cat_id = notes.note_cat 
+    WHERE note_user = $userId AND notes.tenant_code = 
+    (SELECT tenant_code FROM users WHERE user_id = $userId) 
+    ORDER BY notes.note_id DESC";
 $FetchNotesDetailsresult = $conn->query($FetchNotesDetailssql);
 
 if ($FetchNotesDetailsresult->num_rows > 0) {
     ?>
     <main>
         <div class="container my-4">
-            
             <h5 class="fw-bold">Notes List</h5>
             <?php include 'widgets/alert_message.php'; ?>
             <div class="row g-3">
