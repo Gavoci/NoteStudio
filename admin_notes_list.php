@@ -55,17 +55,15 @@ if ($tenantCodeResult->num_rows > 0) {
                                             <p class="text-secondary fs-14 mb-0"><?= $date ?></p>
                                         </div>
                                         <div class="col-lg-3 text-end">
-                                            <div class="dropdown">
-                                                <button class="btn btn-light border btn-sm dropdown-toggle" type="button"
-                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="bi bi-chevron-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="edit_notes.php?noteId=<?=$id?>"><i class=""></i> Edit</a></li>
-                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#deleteModal-<?= $id ?>"><i class=""></i> Delete</a></li>
-                                                </ul>
-                                            </div>
+                                        <div class="dropdown">
+                                            <button class="btn btn-light border btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-chevron-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="edit_notes.php?noteId=<?= $id ?>"><i class="bi bi-pencil-square me-2"></i> Edit</a></li>
+                                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal-<?= $id ?>"><i class="bi bi-trash me-2"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
