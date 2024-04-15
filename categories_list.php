@@ -8,6 +8,7 @@ $user_id = $_SESSION['user_id'];
 $FetchCategoriesDetailssql = "SELECT c.cat_id, c.cat_name, COUNT(n.note_id) AS num_notes 
                               FROM categories c
                               LEFT JOIN notes n ON c.cat_id = n.note_cat
+                              WHERE c.tenant_code = (SELECT tenant_code FROM users WHERE user_id = $user_id)
                               GROUP BY c.cat_id
                               ORDER BY c.cat_name ASC";
 $FetchCategoriesDetailsresult = $conn->query($FetchCategoriesDetailssql);
