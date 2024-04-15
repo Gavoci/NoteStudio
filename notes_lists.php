@@ -11,6 +11,7 @@ if ($FetchNotesDetailsresult->num_rows > 0) {
         <div class="container my-4">
             
             <h5 class="fw-bold">Notes List</h5>
+            <?php include 'widgets/alert_message.php'; ?>
             <div class="row g-3">
                 <?php
                 while ($FetchNotesDetailsrow = $FetchNotesDetailsresult->fetch_assoc()) {
