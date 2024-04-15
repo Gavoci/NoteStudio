@@ -39,9 +39,9 @@
                                 Admin
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="admin_notes_list.php">Notes List</a></li>
-                                <li><a class="dropdown-item" href="admin_categories_list.php">Categories List</a></li>
-                                <li><a class="dropdown-item" href="admin_users_list.php">User List</a></li>
+                                <li><a class="dropdown-item" href="admin_notes_list.php">Admin Notes List</a></li>
+                                <li><a class="dropdown-item" href="admin_categories_list.php">Admin Categories List</a></li>
+                                <li><a class="dropdown-item" href="admin_users_list.php">Admin User List</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
