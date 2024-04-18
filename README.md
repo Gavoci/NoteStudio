@@ -139,7 +139,8 @@ https://richtexteditor.com/
 
 ## ER, SCHEMA RELAZIONALE E RELAZIONE:
 
-![er](https://github.com/Gavoci/NoteStudio/assets/101709194/1b48d465-233c-49ce-a9cc-1ef57ae923e7)
+![er - Copia](https://github.com/Gavoci/NoteStudio/assets/101709194/dafddc50-7602-4ea4-a628-e6374cc4919d)
+
 
 **single-tenant:**
 - users(<ins>user_id</ins>, user_role, user_name, user_email, user_phone, user_age, user_gender, user_password, user_joined)
@@ -147,7 +148,8 @@ https://richtexteditor.com/
 - categories(<ins>cat_id</ins>, cat_name)
 
 
-![er-multy-tenant](https://github.com/Gavoci/NoteStudio/assets/101709194/32f74ed6-cb1c-4f9b-979f-97c4699651e8)
+![er-multy-tenant](https://github.com/Gavoci/NoteStudio/assets/101709194/7fcd4b1c-0752-4ff1-9f8a-2bc58abbff2d)
+
 
 **multi-tenant:**
 - users(user_id, tenant_id, user_role, user_name, user_email, user_phone, user_age, user_gender, user_password, user_joined)
