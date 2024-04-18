@@ -115,16 +115,16 @@ Studenti
 https://richtexteditor.com/
 
 ## funzionalità:
+- [X] editor di testo
 - [x] pagina di register per il sito con autenticazione utente (usando una mail)
-- [x] pagina di login 
-- [x] possibilità fa parte dell'admin di modificare o eliminare un utente
-- [x] ricerca utenti con ajax
+- [x] pagina di login
+- [x] possibilità da parte dell'admin di modificare o eliminare un utente
 - [x] possibilità di modificare i propri dati da parte dell'utente
 - [X] possibilità di creare, modificare o eliminare una nota
 - [X] possibilità di creare, modificare o eliminare una categoria (due categorie non possono avere due nomi uguali)
-- [X] ricerca nota per nome
-- [ ] ricerca per categoria
-- [ ] condivisione delle note (facoltativo)
+- [X] admin per ogni tenant
+- [X] super admin per gestire tutti i tenant
+- [X] possibilita da parte del super admin di creare i tenant
 
 
 ## relazioni:
