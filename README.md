@@ -1,6 +1,6 @@
 # NoteStudio
 
-**link**
+**link:**
 ```
 https://zoophagous-appolonia-gavoci-6f469cf0.koyeb.app/www/
 ```
