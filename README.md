@@ -1,7 +1,7 @@
 # NoteStudio
 
 **link:**
-https://zoophagous-appolonia-gavoci-6f469cf0.koyeb.app/www/
+https://shorturl.at/dUMru
 
 **presentazione:**
 https://shorturl.at/5f0Ov
