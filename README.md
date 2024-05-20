@@ -4,7 +4,7 @@
 https://zoophagous-appolonia-gavoci-6f469cf0.koyeb.app/www/
 
 **presentazione:**
-[https://www.canva.com/design/DAGFB34ELM0/8dZNSWkhGBGocviBY-jKgw/edit?utm_content=DAGFB34ELM0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton](https://shorturl.at/5f0Ov)
+https://shorturl.at/5f0Ov
 
 **comando:**
 ```
