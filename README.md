@@ -3,6 +3,9 @@
 **link:**
 https://shorturl.at/dUMru
 
+![Untitled](https://github.com/Gavoci/NoteStudio/assets/101709194/0bd636bb-3be4-4a8b-bba8-da4ebd30a225)
+
+
 **presentazione:**
 https://shorturl.at/5f0Ov
 
