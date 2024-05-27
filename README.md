@@ -1,7 +1,9 @@
 # NoteStudio
 
 **link:**
-https://shorturl.at/dUMru   ![output-onlinepngtools](https://github.com/Gavoci/NoteStudio/assets/101709194/569bbebb-acdb-4501-bef6-a07fe09ad50c)
+https://shorturl.at/dUMru
+
+![output-onlinepngtools](https://github.com/Gavoci/NoteStudio/assets/101709194/569bbebb-acdb-4501-bef6-a07fe09ad50c)
 
 
 **presentazione:**
